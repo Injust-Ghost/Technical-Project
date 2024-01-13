@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #808080;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 150vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #000000;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .switch {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .switch a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        select {
+            font-size: 16px; /* Adjust the font size */
+            padding: 8px;    /* Adjust the padding */
+            width: 200px;    /* Adjust the width */
+        }
+    </style>
+</head>
+<body>
+<!-- Signup Form -->
+<form style="width: 400px;">
+    <h2>Sign up</h2>
+    <label for="signupFname">First Name:</label>
+    <input type="text" id="signupFname" name="signupFname" required>
+
+    <label for="signupLname">Last Name:</label>
+    <input type="text" id="signupLname" name="signupLname" required>
+
+    <label for="signupDiv">Division:</label>
+    <input type="num" id="signupDiv" name="signupDiv" required>
+
+    <label for="signupBatch">Batch:</label>
+    <input type="num" id="signupBatch" name="signupBatch" required>
+
+    <label for="signupCourse">Course:</label>
+    <input type="num" id="signupCourse" name="signupCourse" required>
+
+    <label for="signup">SAP ID:</label>
+    <input type="num" id="signupSapID" name="signupSapID" required>
+
+    <label for="options">Year:</label>
+    <select id="options" name="options">
+        <option value="option1">1st Year</option>
+        <option value="option2">2nd Year</option>
+        <option value="option3">3rd Year</option>
+        <option value="option4">4th Year</option>
+        <option value="option5">5th Year</option>
+        <option value="option6">6th Year</option>
+    </select>
+
+    <label for="signupPassword">Password:</label>
+    <input type="password" id="signupPassword" name="signupPassword" required>
+
+    <label for="signupPass">Confirm Password:</label>
+    <input type="password" id="signupPass" name="signupPass" required>
+
+
+    <button type="submit">Sign up</button>
+    <div class="switch">
+        <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+</form>
+
+</body>
+</html>
