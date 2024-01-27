@@ -1,37 +1,92 @@
+
+
 <html>
-<body style="background-color: beige;">
-    <table height="100%">
-    <tr>
-        <td>
-            <figure>
-                <img src="Images\Horizontal-Line-PNG-Photos.png" alt=" " height="50" width="50"></img src>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <figure>
-                <a href="Master Calendar.html" target="Main"><img src="Images\Paomedia-Small-N-Flat-Calendar.1024.png" height="70" width="50"></img src></a>
-                <figcaption>Master Calendar</figcaption>
-                </figure>
-        </td>
-    </tr>
-    <tr>
-         <td>
-            <figure>
-                <a href="Contact_Us.html" target="Main"><img src="Images\Contact_Us.png" height="70" width="50"></img src></a>
-                <figcaption>Contact Us</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <figure>
-                <a href="FAQ.html" target = "Main"><img src="Images\Icon-round-Question_mark.svg.png" height="70" width="50"></img src></a>
-                <figcaption>FAQ's</figcaption>
-            </figure>
-        </td>
-    </tr>
-</table>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop Out Sidebar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #main {
+            transition: margin-left 0.5s;
+            padding: 16px;
+        }
+
+        #sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            color: white;
+        }
+
+        #sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        #sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        #sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            left: 25px;
+            font-size: 36px;
+            margin-right: 50px;
+        }
+
+        #openBtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar">
+        <button class="closebtn" onclick="closeNav()">×</button>
+        <a href="Master Calendar.html"><img src="Images\Paomedia-Small-N-Flat-Calendar.1024.png" height="80" width="50" align="Center">Master Calendar</img src></a>
+        <a href="Contact_Us.html"><img src="Images\Contact_Us.png" height="80" width="50" align="Center">Contact Us</img src></a>
+        <a href="FAQ.html"><img src="Images\Icon-round-Question_mark.svg.png" height="80" width="50" align="Center">FAQ's</img src></a>
+    </div>
+
+    <div id="main">
+        <button id="openBtn" onclick="openNav()">☰</button>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("sidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("sidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+
 </body>
 </html>
