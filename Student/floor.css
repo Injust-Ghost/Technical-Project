@@ -7,3 +7,8 @@ td
 {
     background-color: powderblue;
 }
+body
+{
+    align-items: center;
+    justify-content: center;
+}
