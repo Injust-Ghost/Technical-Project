@@ -4,12 +4,23 @@
     </head>
     <body>
         <script>
-            function myfunction()
-            {
-                var x= list.value;
-                document.getElementById(x).style.backgroundColor="cyan";
+            function myfunction() {
+                
+                var x = list.value;
+                var selectedClass = document.getElementById(x);
+                selectedClass.style.backgroundColor = "cyan";
+
+                // Reset previously selected class to normal state
+                var previouslySelectedClass = document.getElementById(list.getAttribute("data-selected"));
+                if (previouslySelectedClass) {
+                    previouslySelectedClass.style.backgroundColor = "";
+                }
+
+                // Store the currently selected class for future reference
+                list.setAttribute("data-selected", x);
             }
         </script>
+
         <form>
             <label for="options">Select the Class you want to find:</label>
             <select id="list" name="list">
@@ -25,6 +36,7 @@
                 <option value="CL706" id="ClassName" name="ClassCode">CL706</option>
                 <option value="CC701" id="ClassName" name="ClassCode">CC701</option>
                 <option value="CC702" id="ClassName" name="ClassCode">CC702</option>
+                <option value="LIBRY" id="ClassName" name="ClassCode">Library</option>
                 <option value="ARVRL" id="ClassName" name="ClassCode">AR/VR Lab</option>
             </select>
         <button type="button" onclick="myfunction()">Find Class</button>

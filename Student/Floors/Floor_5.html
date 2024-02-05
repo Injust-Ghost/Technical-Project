@@ -4,40 +4,55 @@
     </head>
     <body>
         <script>
-            function myfunction()
-            {
-                var x= list.value;
-                document.getElementById(x).style.backgroundColor="cyan";
+            function myfunction() {
+                var options = document.querySelectorAll('#list option');
+                options.forEach(function (option) {
+                    option.style.backgroundColor = '';
+                });
+
+                var x = list.value;
+                var selectedClass = document.getElementById(x);
+                selectedClass.style.backgroundColor = "cyan";
+
+                // Reset previously selected class to normal state
+                var previouslySelectedClass = document.getElementById(list.getAttribute("data-selected"));
+                if (previouslySelectedClass) {
+                    previouslySelectedClass.style.backgroundColor = "";
+                }
+
+                // Store the currently selected class for future reference
+                list.setAttribute("data-selected", x);
             }
         </script>
         <form>
             <label for="options">Select the Class you want to find:</label>
             <select id="list" name="list">
-                <option value="CR301" id="ClassName" name="ClassCode">CR301</option>
-                <option value="CR302" id="ClassName" name="ClassCode">CR302</option>
-                <option value="CR303" id="ClassName" name="ClassCode">CR303</option>
-                <option value="CR304" id="ClassName" name="ClassCode">CR304</option>
-                <option value="CR305" id="ClassName" name="ClassCode">CR305</option>
-                <option value="CR306" id="ClassName" name="ClassCode">CR306</option>
-                <option value="CR307" id="ClassName" name="ClassCode">CR307</option>
-                <option value="CR308" id="ClassName" name="ClassCode">CR308</option>
-                <option value="CR309" id="ClassName" name="ClassCode">CR309</option>
-                <option value="CR310" id="ClassName" name="ClassCode">CR310</option> 
-                <option value="TR301" id="ClassName" name="ClassCode">TR301</option>
-                <option value="TR302" id="ClassName" name="ClassCode">TR302</option>
-                <option value="TR303" id="ClassName" name="ClassCode">TR303</option>
-                <option value="CC301" id="ClassName" name="ClassCode">CC301</option>
-                <option value="GRLCR" id="ClassName" name="ClassCode">Girls Commom Room</option>
+                <option value="CR501" id="ClassName" name="ClassCode">CR501</option>
+                <option value="CR502" id="ClassName" name="ClassCode">CR502</option>
+                <option value="CR503" id="ClassName" name="ClassCode">CR503</option>
+                <option value="CR504" id="ClassName" name="ClassCode">CR504</option>
+                <option value="CR505" id="ClassName" name="ClassCode">CR505</option>
+                <option value="CR506" id="ClassName" name="ClassCode">CR506</option>
+                <option value="CR507" id="ClassName" name="ClassCode">CR507</option>
+                <option value="CR508" id="ClassName" name="ClassCode">CR508</option>
+                <option value="CL501" id="ClassName" name="ClassCode">CL501</option>
+                <option value="CL502" id="ClassName" name="ClassCode">CL502</option> 
+                <option value="CL503" id="ClassName" name="ClassCode">CL503</option>
+                <option value="CL504" id="ClassName" name="ClassCode">CL504</option>
+                <option value="CL505" id="ClassName" name="ClassCode">CL505</option>
+                <option value="CL506" id="ClassName" name="ClassCode">CL506</option>
+                <option value="TR501" id="ClassName" name="ClassCode">TR501</option>
+                <option value="BOYCR" id="ClassName" name="ClassCode">Boys Commom Room</option>
             </select>
         <button type="button" onclick="myfunction()">Find Class</button>
         </form>
         <table height="100" width="100%" border="1">
             <tbody>
                 <tr>
-                    <td width="600">Faculty Room 302</td>
+                    <td width="600">Faculty Room 502</td>
                     <td width="200">Washrooms</td>
                     <td width="100">Stairs</td>
-                    <td width="600">Faculty Room 301</td>
+                    <td width="600">Faculty Room 501</td>
                 </tr>
             </tbody>
         </table>
@@ -49,16 +64,16 @@
                         <table border="1" width="100%">
                             <tbody>
                                 <tr>
-                                    <td height="125" id="CR303">CR 303</td>
+                                    <td height="125" id="CR503">CR 503</td>
                                 </tr>
                                 <tr>
-                                    <td height="85" id="TR302">TR 302</td>
+                                    <td height="85" id="CL501">CL 501</td>
                                 </tr>
                                 <tr>
-                                    <td height="85" id="TR301">TR 301</td>
+                                    <td height="85" id="TR501">TR 501</td>
                                 </tr>
                                 <tr>
-                                    <td height="125" id="GRLCR">Girls Common Room</td>
+                                    <td height="125" id="BOYCR">Boys Common Room</td>
                                 </tr>
                                 <tr>
                                     <td height="50">Washrooms</td>
@@ -77,16 +92,16 @@
                                     <td height="50" width="500" colspan="2">Lifts</td>
                                 </tr>
                                 <tr>
-                                    <td width="250" height="120" id="CR309">CR 309</td>
-                                    <td width="250" height="120" id="CR310">CR 310</td>
+                                    <td width="250" height="120" id="CR508">CR 508</td>
+                                    <td width="250" height="120" id="CR504">CR 504</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" height="182">FLOOR 3</td>
+                                    <td colspan="2" height="182">FLOOR 5</td>
                                 </tr>
                                 <tr>
                                     
-                                        <td height="120" id="CR308">CR 308</td>
-                                        <td height="120" id="CR307">CR 307</td>
+                                        <td height="120" id="CR507">CR 507</td>
+                                        <td height="120" id="CR506">CR 506</td>
                                     
                                 </tr>
                                 <tr>
@@ -100,16 +115,19 @@
                         <table border="1" width="100%">
                             <tbody>
                                 <tr>
-                                    <td height="160" id="CR304">CR 304</td>
+                                    <td height="80" id="CL502">CL 502</td>
+                                </tr>
+                                <tr>
+                                    <td height="80" id="CL503">CL 503</td>
                                 </tr>
                                 <tr>
                                     <td height="50">Exit</td>
                                 </tr>
                                 <tr>
-                                    <td height="130" id="CR305">CR 305</td>
+                                    <td height="130" id="CR504">CR 504</td>
                                 </tr>
                                 <tr>
-                                    <td height="130" id="CR306">CR 306</td>
+                                    <td height="130" id="CR505">CR 505</td>
                                 </tr>
                                 <tr>
                                     <td height="50">Exit</td>
@@ -128,8 +146,8 @@
                         <table height="100" width="100%" border="1">
                             <tbody>
                                 <tr>
-                                        <td width="300" id="CR302">CR 302</td>
-                                        <td width="300" id="CR301">CR 301</td>
+                                        <td width="300" id="CR502">CR 502</td>
+                                        <td width="300" id="CR501">CR 501</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -141,8 +159,9 @@
                         <table height="100" width="100%" border="1">
                             <tbody>
                                 <tr>
-                                    <td width="300" id="CC301">CC 301</td>
-                                    <td width="300" id="TR303">TR 303</td>
+                                    <td width="200" id="CL506">CL 506</td>
+                                    <td width="200" id="CL505">CL 505</td>
+                                    <td width="200" id="CL504">CL 504</td>
                                 </tr>
                             </tbody>
                         </table>
