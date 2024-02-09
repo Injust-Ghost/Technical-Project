@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #808080;
+            background-color: bisque;
             margin: 0;
             padding: 0;
             display: flex;
@@ -59,9 +56,30 @@
         }
 
         select {
-            font-size: 16px; /* Adjust the font size */
-            padding: 8px;    /* Adjust the padding */
-            width: 200px;    /* Adjust the width */
+            font-size: 16px;
+            padding: 8px;    
+            width: 200px;    
+        }
+        form{
+            animation: slideFromRight 1.2s ease-out forwards;
+            z-index: 1;
+        }
+        @keyframes slideFromLeft {
+            from {
+              transform: translateX(-100%);
+            }
+            to {
+              transform: translateX(0);
+            }
+        }
+      
+        @keyframes slideFromRight {
+            from {
+              transform: translateX(100%);
+            }
+            to {
+              transform: translateX(0);
+            }
         }
     </style>
 </head>
@@ -78,25 +96,6 @@
     <label for="signupDiv">Division:</label>
     <input type="num" id="signupDiv" name="signupDiv" required>
 
-    <label for="signupBatch">Batch:</label>
-    <input type="num" id="signupBatch" name="signupBatch" required>
-
-    <label for="signupCourse">Course:</label>
-    <input type="num" id="signupCourse" name="signupCourse" required>
-
-    <label for="signup">SAP ID:</label>
-    <input type="num" id="signupSapID" name="signupSapID" required>
-
-    <label for="options">Year:</label>
-    <select id="options" name="options">
-        <option value="option1">1st Year</option>
-        <option value="option2">2nd Year</option>
-        <option value="option3">3rd Year</option>
-        <option value="option4">4th Year</option>
-        <option value="option5">5th Year</option>
-        <option value="option6">6th Year</option>
-    </select>
-
     <label for="signupPassword">Password:</label>
     <input type="password" id="signupPassword" name="signupPassword" required>
 
@@ -106,7 +105,7 @@
 
     <button type="submit">Sign up</button>
     <div class="switch">
-        <p>Already have an account? <a href="login.html">Login</a></p>
+        <p>Already have an account? <a href="S_login.html">Login</a></p>
     </div>
 </form>
 

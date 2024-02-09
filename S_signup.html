@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #808080;
+            background-color: bisque;
             margin: 0;
             padding: 0;
             display: flex;
@@ -59,15 +59,36 @@
         }
 
         select {
-            font-size: 16px; /* Adjust the font size */
-            padding: 8px;    /* Adjust the padding */
-            width: 200px;    /* Adjust the width */
+            font-size: 16px;
+            padding: 8px;    
+            width: 200px;    
         }
+        form{
+            animation: slideFromRight 1.2s ease-out forwards;
+            z-index: 1;
+        }
+        @keyframes slideFromLeft {
+            from {
+              transform: translateX(-100%);
+            }
+            to {
+              transform: translateX(0);
+            }
+          }
+      
+          @keyframes slideFromRight {
+            from {
+              transform: translateX(100%);
+            }
+            to {
+              transform: translateX(0);
+            }
+          }
     </style>
 </head>
 <body>
 <!-- Signup Form -->
-<form style="width: 400px;">
+<form action="Student\Home.html" target="_parent" style="width: 400px;" method="post">
     <h2>Sign up</h2>
     <label for="signupFname">First Name:</label>
     <input type="text" id="signupFname" name="signupFname" required>
@@ -106,7 +127,7 @@
 
     <button type="submit">Sign up</button>
     <div class="switch">
-        <p>Already have an account? <a href="login.html">Login</a></p>
+        <p>Already have an account? <a href="S_login.html">Login</a></p>
     </div>
 </form>
 
