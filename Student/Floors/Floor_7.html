@@ -10,13 +10,11 @@
                 var selectedClass = document.getElementById(x);
                 selectedClass.style.backgroundColor = "cyan";
 
-                // Reset previously selected class to normal state
                 var previouslySelectedClass = document.getElementById(list.getAttribute("data-selected"));
                 if (previouslySelectedClass) {
                     previouslySelectedClass.style.backgroundColor = "";
                 }
 
-                // Store the currently selected class for future reference
                 list.setAttribute("data-selected", x);
             }
         </script>

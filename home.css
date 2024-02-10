@@ -40,14 +40,14 @@ h1::after {
 
 h1::before {
   background: bisque;
-  animation: typewriter 4s
+  animation: typewriter 2s
     steps(23) 1s forwards;
 }
 
 h1::after {
   width: 0.125em;
   background: black;
-  animation: typewriter 4s
+  animation: typewriter 2s
       steps(24) 1s forwards,
     blink 750ms steps(24) infinite;
 }
@@ -60,7 +60,7 @@ h1::after {
   font-size: 18;
   opacity: 0;
   transform: translateY(3rem);
-  animation: fadeInUp 2s ease 6s forwards;
+  animation: fadeInUp 2s ease 1s forwards;
 }
 
 @keyframes typewriter {
