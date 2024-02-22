@@ -75,16 +75,43 @@
                 transform: translateX(0);
                 }
             }
+            .password-toggle {
+                position: relative;
+            }
+            .password-toggle button {
+                position: absolute;
+                right: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
         </style>
     </head>
     <body>
+        <script>
+            function togglePassword() {
+                var passwordInput = document.getElementById("loginPassword");
+                var passwordToggle = document.getElementById("password-toggle");
+    
+                if (passwordInput.type === "password") {
+                    passwordInput.type = "text";
+                    passwordToggle.textContent = "Hide";
+                } else {
+                    passwordInput.type = "password";
+                    passwordToggle.textContent = "Show";
+                }
+            }
+        </script>
 
-    <form action="Student\Home.html" target="_parent" id="student_login" style="width: 400px;" method="post">
+    <form action="login.php" target="_parent" id="student_login" style="width: 400px;" method="post">
         <h2>Student Login</h2>
-        <label for="loginUsername">Username:</label>
+        <label for="loginUsername">SAP ID:</label>
         <input type="text" id="loginUsername" name="loginUsername" required>
-        <label for="loginPassword">Password:</label>
+        <label for="loginPassword" class="password-toggle">Password:</label>
         <input type="password" id="loginPassword" name="loginPassword" required>
+        <button type="button" class ="password-toggle" onclick="togglePassword()" id="password-toggle">Show</button>
         <button type="submit">Login</button>
         <div class="switch">
             <p>Don't have an account? <a href="S_signup.html">Sign up</a></p>
