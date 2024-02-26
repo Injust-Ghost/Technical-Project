@@ -19,7 +19,7 @@ if (!$conn) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = mysqli_real_escape_string($conn, $_POST['loginUsername']);
     $password = mysqli_real_escape_string($conn, $_POST['loginPassword']);
-
+    header('Location: jstt.php?data=' . $username);
    
     $sql = "SELECT * FROM student WHERE SAP_ID = '$username' AND Password = '$password'";
     $result = mysqli_query($conn, $sql);
