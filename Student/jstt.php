@@ -6,9 +6,22 @@
                 text-decoration: none;
                 color: black;
             }
+            body {
+                margin: 0%;
+            }
         </style>
     </head>
-    <table border="1" width="100%" height="100%">
+    <table height="10%" width="100%" border="0" bgcolor="bisque">
+        <col width="570"><col width="400"><col width="300">
+            <thead>
+                <tr>
+                    <th><a href="Home.html" target="_parent">ON THE GO</a></th>
+                    <th>DETAILS</th>
+                    <th align="right"><img src="Images\account.png" height="50" width="50"><img src></th>
+                </tr>
+            </thead>
+        </table>
+    <table border="1" width="100%" height="90%">
         <thead>
             <tr>
                 <td>TIME/DAY</td>
