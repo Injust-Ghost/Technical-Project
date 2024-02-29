@@ -1,8 +1,8 @@
 <?php
 $db_host = "localhost";
-$db_name = "techproject";
-$db_user = "Neel Mehta";
-$db_password = "SerialkillerX7";
+$db_name = "project";
+$db_user = "neel";
+$db_password = "tech@123";
 
 $conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
 
@@ -27,7 +27,7 @@ if ($password != $cpassword) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Prepare the SQL statement using a prepared statement
-    $sql= "INSERT INTO student(SAP_ID,`First Name`,`Last Name`,Division,Batch,Course,Year,Password)
+    $sql= "INSERT INTO student(SAP_ID,`First Name`,`Last Name`,Division,Batch,Course,yr,Password)
     VALUES ('$sapid','$fname','$lname','$Div','$batch','$course','$year','$password')";
 
     $result = mysqli_query($conn, $sql);
