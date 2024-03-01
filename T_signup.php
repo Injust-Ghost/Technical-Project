@@ -29,7 +29,7 @@ if ($password != $cpassword) {
     VALUES ('$empcode','$fname','$lname','$initial','$email','$password')";
 
     $result = mysqli_query($conn, $sql);
-    header('Location: Student/Home.html'); 
+    header('Location index.html'); 
 
 }
 

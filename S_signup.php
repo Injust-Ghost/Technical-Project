@@ -15,6 +15,7 @@ $lname = $_POST["signupLname"];
 $Div = $_POST["signupDiv"];
 $batch = $_POST["signupBatch"];
 $course = $_POST["signupCourse"];
+$spec = $_POST["signupSpec"];
 $sapid = $_POST["signupSapID"];
 $semester = $_POST["options"];
 $password = $_POST["signupPassword"];
@@ -27,11 +28,11 @@ if ($password != $cpassword) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Prepare the SQL statement using a prepared statement
-    $sql= "INSERT INTO student(SAP_ID,`First Name`,`Last Name`,Division,Batch,Course,Semester,Password)
-    VALUES ('$sapid','$fname','$lname','$Div','$batch','$course','$semester','$password')";
+    $sql= "INSERT INTO student(SAP_ID,`First Name`,`Last Name`,Division,Specialization,Batch,Course,Semester,Password)
+    VALUES ('$sapid','$fname','$lname','$Div','$spec','$batch','$course','$semester','$password')";
 
     $result = mysqli_query($conn, $sql);
-    header('Location: Student/Home.html'); 
+    header('Location: index.html'); 
 
 }
 
