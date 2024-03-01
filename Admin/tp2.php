@@ -17,7 +17,7 @@
             <col width="570"><col width="400"><col width="300">
                 <thead>
                     <tr>
-                        <th><a href="Home.html" target="_parent">ON THE GO</a></th>
+                        <th><a href="Home2.html" target="_parent">ON THE GO</a></th>
                         <th>DETAILS</th>
                         <th align="right"><img src="../Student/Images/account.png" height="50" width="50"><img src></th>
                     </tr>
@@ -25,9 +25,6 @@
         </table>
         <table>
             <tr>
-                <td>
-                    
-                </td>
                 <td>
                     <?php
                         session_start(); // Start the session
@@ -51,13 +48,13 @@
                                 die("Connection failed: " . mysqli_connect_error());
                             }
 
-                            $sql1 = "SELECT Initials FROM teacher WHERE emp_code=$dr";
+                            $sql1 = "SELECT Initials FROM teacher WHERE Employee_code=$dr";
                             $result1 = mysqli_query($conn, $sql1);
                             $row = mysqli_fetch_assoc($result1);
 
-                            $Init=$row;
+                            $Init=$row["Initials"];
 
-                            echo "<table border='1' width='100%' height='90%'>";
+                            echo "<table border='1' width='100%' height='100%'>";
                             echo "<thead><tr><td>MONDAY</td><td>TUESDAY</td><td>WEDNESDAY</td><td>THURSDAY</td><td>FRIDAY</td><td>SATURDAY</td></tr></thead>";
 
                             for($i = 1; $i <= 10; $i++) {
