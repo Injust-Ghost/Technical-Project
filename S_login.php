@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $db_host = "localhost";
 $db_name = "project";
 $db_user = "neel";
@@ -18,8 +18,9 @@ if (!$conn) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = mysqli_real_escape_string($conn, $_POST['loginUsername']);
     $password = mysqli_real_escape_string($conn, $_POST['loginPassword']);
-    header('Location: jstt.php?data=' . $username);
+    $_SESSION["usr"]=$username;
    
+
     $sql = "SELECT * FROM student WHERE SAP_ID = '$username' AND Password = '$password'";
     $result = mysqli_query($conn, $sql);
 
