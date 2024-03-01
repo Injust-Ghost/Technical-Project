@@ -10,7 +10,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 150vh;
+            height: 100vh;
         }
 
         form {
@@ -85,7 +85,7 @@
 </head>
 <body>
 <!-- Signup Form -->
-<form style="width: 400px;">
+<form action="T_signup.php" target="_parent" id="teacher_login" style="width: 400px;" method="post">
     <h2>Sign up</h2>
     <label for="signupFname">First Name:</label>
     <input type="text" id="signupFname" name="signupFname" required>
@@ -93,8 +93,8 @@
     <label for="signupLname">Last Name:</label>
     <input type="text" id="signupLname" name="signupLname" required>
 
-    <label for="signupDiv">Division:</label>
-    <input type="num" id="signupDiv" name="signupDiv" required>
+    <label for="signupDiv">Employee Code:</label>
+    <input type="num" id="signupEMPCode" name="signupEMPCode" required>
 
     <label for="signupPassword">Password:</label>
     <input type="password" id="signupPassword" name="signupPassword" required>
@@ -105,7 +105,7 @@
 
     <button type="submit">Sign up</button>
     <div class="switch">
-        <p>Already have an account? <a href="S_login.html">Login</a></p>
+        <p>Already have an account? <a href="T_login.html">Login</a></p>
     </div>
 </form>
 
