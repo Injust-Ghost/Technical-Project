@@ -18,7 +18,8 @@ if (!$conn) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = mysqli_real_escape_string($conn, $_POST['loginUsername']);
     $password = mysqli_real_escape_string($conn, $_POST['loginPassword']);
-    header('Location: jstt.php?data=' . $username);
+    session_start();
+    $_SESSION["rsu"]=$username;
    
     $sql = "SELECT * FROM teacher WHERE Employee_Code = '$username' AND Password = '$password'";
     $result = mysqli_query($conn, $sql);
@@ -29,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
         // if (password_verify($password, $row['Password'])) {
             
-            header('Location: Student/Home.html'); 
+            header('Location: Student/Home2.html'); 
         } else {
             echo '<script>window.prompt("Username or password is incorrect.");</script>';
         }
