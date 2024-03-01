@@ -12,11 +12,9 @@ if (!$conn) {
 
 $fname = $_POST["signupFname"];
 $lname = $_POST["signupLname"];
-$Div = $_POST["signupDiv"];
-$batch = $_POST["signupBatch"];
-$course = $_POST["signupCourse"];
-$sapid = $_POST["signupSapID"];
-$year = $_POST["options"];
+$empcode = $_POST["signupEMPCode"];
+$email = $_POST["signupEmail"];
+$initial = $_POST["signupInitials"];
 $password = $_POST["signupPassword"];
 $cpassword = $_POST["signupPass"];
 
@@ -27,16 +25,13 @@ if ($password != $cpassword) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Prepare the SQL statement using a prepared statement
-    $sql= "INSERT INTO student(SAP_ID,`First Name`,`Last Name`,Division,Batch,Course,yr,Password)
-    VALUES ('$sapid','$fname','$lname','$Div','$batch','$course','$year','$password')";
+    $sql= "INSERT INTO teacher(`Employee_Code`,`First Name`,`Last Name`,Initials,EMail,Password)
+    VALUES ('$empcode','$fname','$lname','$initial','$email','$password')";
 
     $result = mysqli_query($conn, $sql);
     header('Location: Student/Home.html'); 
 
 }
-
-
-
 
 mysqli_close($conn);
 ?>

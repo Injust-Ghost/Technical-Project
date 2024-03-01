@@ -87,6 +87,20 @@
     </style>
 </head>
 <body>
+    <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById("loginPassword");
+            var passwordToggle = document.getElementById("password-toggle");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                passwordToggle.textContent = "Hide";
+            } else {
+                passwordInput.type = "password";
+                passwordToggle.textContent = "Show";
+            }
+        }
+    </script>
 <!-- Signup Form -->
 <form action="S_signup.php" target="_parent" style="width: 400px;" method="post">
     <h2>Sign up</h2>
@@ -124,7 +138,7 @@
     <label for="signupPass">Confirm Password:</label>
     <input type="password" id="signupPass" name="signupPass" required>
 
-
+    <button type="button" class ="password-toggle" onclick="togglePassword()" id="password-toggle">Show</button>
     <button type="submit">Sign up</button>
     <div class="switch">
         <p>Already have an account? <a href="S_login.html">Login</a></p>

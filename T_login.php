@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = mysqli_real_escape_string($conn, $_POST['loginPassword']);
     header('Location: jstt.php?data=' . $username);
    
-    $sql = "SELECT * FROM student WHERE SAP_ID = '$username' AND Password = '$password'";
+    $sql = "SELECT * FROM teacher WHERE Employee_Code = '$username' AND Password = '$password'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) == 1) {

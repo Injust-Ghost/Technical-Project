@@ -10,7 +10,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            height: 120vh;
         }
 
         form {
@@ -84,6 +84,20 @@
     </style>
 </head>
 <body>
+    <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById("signupPassword");
+            var passwordToggle = document.getElementById("password-toggle");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                passwordToggle.textContent = "Hide";
+            } else {
+                passwordInput.type = "password";
+                passwordToggle.textContent = "Show";
+            }
+        }
+    </script>
 <!-- Signup Form -->
 <form action="T_signup.php" target="_parent" id="teacher_login" style="width: 400px;" method="post">
     <h2>Sign up</h2>
@@ -96,13 +110,19 @@
     <label for="signupDiv">Employee Code:</label>
     <input type="num" id="signupEMPCode" name="signupEMPCode" required>
 
+    <label for="signupDiv">E-Mail:</label>
+    <input type="num" id="signupEmail" name="signupEmail" required>
+
+    <label for="signupDiv">Initials:</label>
+    <input type="num" id="signupInitials" name="signupInitials" required>
+
     <label for="signupPassword">Password:</label>
     <input type="password" id="signupPassword" name="signupPassword" required>
 
     <label for="signupPass">Confirm Password:</label>
     <input type="password" id="signupPass" name="signupPass" required>
 
-
+    <button type="button" class ="password-toggle" onclick="togglePassword()" id="password-toggle">Show</button>
     <button type="submit">Sign up</button>
     <div class="switch">
         <p>Already have an account? <a href="T_login.html">Login</a></p>
