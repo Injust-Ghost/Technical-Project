@@ -57,6 +57,11 @@
                             $semester = $row['semester'];
                             $batch= $row['Batch'];
 
+                            date_default_timezone_set('Asia/Kolkata');
+                            $currentTime = date( 'H:i', time () );
+                            echo $currentTime;
+                            $day=date("D");
+                            echo $day;
                             echo "<table border='1' width='100%' height='100%'>";
                             echo "<thead><tr><td>MONDAY</td><td>TUESDAY</td><td>WEDNESDAY</td><td>THURSDAY</td><td>FRIDAY</td><td>SATURDAY</td></tr></thead>";
 
