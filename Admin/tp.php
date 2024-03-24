@@ -57,11 +57,6 @@
                             $semester = $row['semester'];
                             $batch= $row['Batch'];
 
-                            date_default_timezone_set('Asia/Kolkata');
-                            $currentTime = date( 'H:i', time () );
-                            echo $currentTime;
-                            $day=date("D");
-                            echo $day;
                             echo "<table border='1' width='100%' height='100%'>";
                             echo "<thead><tr><td>MONDAY</td><td>TUESDAY</td><td>WEDNESDAY</td><td>THURSDAY</td><td>FRIDAY</td><td>SATURDAY</td></tr></thead>";
 
@@ -71,7 +66,7 @@
                                     $sql4 = "SELECT subject, faculty, venue, batch FROM time_table WHERE `division`='$div' AND `semester`='$semester' AND (`Batch`='$batch' OR `Batch`='F' OR `Subject`='BREAK') AND `course`='$course' AND t_id='$i' AND d_id='$j'";
                                     $result4 = mysqli_query($conn, $sql4);
                                     $row4 = mysqli_fetch_assoc($result4);
-                                    echo "<td width='250px' id='$i + $j' align='center'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Batch"]."</td>";
+                                    echo "<td width='250px' id='$i.$j' align='center'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Batch"]."</td>";
                                 }
                                 echo "</tr>";
                             }
@@ -86,11 +81,9 @@
     </body>
 </html>
 <?php
-    while(1>0)
-    {
         date_default_timezone_set('Asia/Kolkata');
         $timestamp=date( 'H:i', time () );
-        $day=date("D");
+        $day="Monday";
         if($day=='Monday')
         {
             if($timestamp>=8 AND $timestamp<9)
@@ -258,5 +251,5 @@
                 </script>";
             }
         }
-    }
+    
 ?>
