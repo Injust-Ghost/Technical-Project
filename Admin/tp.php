@@ -67,7 +67,7 @@
                                 $row4 = mysqli_fetch_assoc($result4);
                                 $v=$i.$j;
                                 $x=$row4["venue"];
-                                echo "<td width='250px' align='center' id=$v value=$x  onclick='find()'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Batch"]."</td>";
+                                echo "<td width='250px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Batch"]."</td>";
                             }
                             echo "</tr>";
                         }
@@ -81,9 +81,43 @@
     </table>
 
     <script>
-        function find() {
-            
-            window.location.href = 'yo.html';
+        function find(id) {
+            x=document.GetElementByID(id).value;
+            y=x/100;
+            z=y%10;
+            if(z==2)
+            {
+                window.location.href = 'floor2.html';
+            }
+            else
+            if(z==3)
+            {
+                window.location.href = 'floor3.html';
+            }
+            else
+            if(z==4)
+            {
+                window.location.href = 'floor4.html';
+            }
+            else
+            if(z==5)
+            {
+                window.location.href = 'floor5.html';
+            }
+            else
+            if(z==6)
+            {
+                window.location.href = 'floor6.html';
+            }
+            else
+            if(z==7)
+            {
+                window.location.href = 'floor7.html';
+            }
+            else
+            {
+                window.location.href = 'floor8.html';
+            }
         }
 
     </script>
