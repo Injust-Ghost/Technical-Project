@@ -80,4 +80,178 @@
         </table>
     </body>
 </html>
-
+<?php
+    while(1>0)
+    {
+        date_default_timezone_set('Asia/Kolkata');
+        $timestamp=date( 'H:i', time () );
+        $day=date("D");
+        if($day=='Monday')
+        {
+            if($timestamp>=8 AND $timestamp<9)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(111);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=9 AND $timestamp<10)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(211);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=10 AND $timestamp<11)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(311);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=11 AND $timestamp<12)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(411);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=12 AND $timestamp<13)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(511);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=13 AND $timestamp<14)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(611);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=14 AND $timestamp<15)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(711);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=15 AND $timestamp<16)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(811);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=16 AND $timestamp<17)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(911);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(1011);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+        }
+        else
+        if($day=='Tuesday')
+        {
+            if($timestamp>=8 AND $timestamp<9)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(112);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=9 AND $timestamp<10)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(212);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=10 AND $timestamp<11)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(312);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=11 AND $timestamp<12)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(412);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=12 AND $timestamp<13)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(512);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=13 AND $timestamp<14)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(612);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=14 AND $timestamp<15)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(712);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=15 AND $timestamp<16)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(812);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else if($timestamp>=16 AND $timestamp<17)
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(912);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+            else
+            {
+                echo "<script>                
+                var x = list.value;
+                var selectedClass = document.getElementById(1012);
+                selectedClass.style.backgroundColor = 'grey';
+                </script>";
+            }
+        }
+    }
+?>
