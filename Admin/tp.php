@@ -85,6 +85,11 @@
             x=document.GetElementByID(id).value;
             y=x/100;
             z=y%10;
+            if(z==1)
+            {
+                window.location.href = 'floor1.html';
+            }
+            else
             if(z==2)
             {
                 window.location.href = 'floor2.html';
