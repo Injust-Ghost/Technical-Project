@@ -82,9 +82,12 @@
 
     <script>
         function find() {
+            
             window.location.href = 'yo.html';
         }
 
+    </script>
+    <script>
         function updateTimetable() {
             var currentTime = new Date();
             var hour = currentTime.getHours();
