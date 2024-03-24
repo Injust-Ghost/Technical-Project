@@ -66,7 +66,7 @@
                                     $sql4 = "SELECT subject, faculty, venue, batch FROM time_table WHERE `division`='$div' AND `semester`='$semester' AND (`Batch`='$batch' OR `Batch`='F' OR `Subject`='BREAK') AND `course`='$course' AND t_id='$i' AND d_id='$j'";
                                     $result4 = mysqli_query($conn, $sql4);
                                     $row4 = mysqli_fetch_assoc($result4);
-                                    echo "<td width='250px' align='center'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Batch"]."</td>";
+                                    echo "<td width='250px' id='$i + $j' align='center'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Batch"]."</td>";
                                 }
                                 echo "</tr>";
                             }
