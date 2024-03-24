@@ -85,41 +85,41 @@
             var minute = currentTime.getMinutes();
             var day = currentTime.getDay(); 
 
-            if($day=='Monday')
+            if(day === 1 )
         {
-            if($timestamp>=8 AND $timestamp<9)
+            if(hour>=8 AND hour<9)
             {
                 document.getElementById('111').style.backgroundColor = 'grey';
             }
-            else if($timestamp>=9 AND $timestamp<10)
+            else if(hour>=9 AND hour<10)
             {
                 document.getElementById('211').style.backgroundColor = 'grey';
             }
-            else if($timestamp>=10 AND $timestamp<11)
+            else if(hour>=10 AND hour<11)
             {
                 document.getElementById('311').style.backgroundColor = 'grey';
             }
-            else if($timestamp>=11 AND $timestamp<12)
+            else if(hour>=11 AND hour<12)
             {
                 document.getElementById('411').style.backgroundColor = 'grey';
             }
-            else if($timestamp>=12 AND $timestamp<13)
+            else if(hour>=12 AND hour<13)
             {
                 document.getElementById('511').style.backgroundColor = 'grey';
             }
-            else if($timestamp>=13 AND $timestamp<14)
+            else if(hour>=13 AND hour<14)
             {
                 document.getElementById('611').style.backgroundColor = 'grey';
             }
-            else if($timestamp>=14 AND $timestamp<15)
+            else if(hour>=14 AND hour<15)
             {
                 document.getElementById('711').style.backgroundColor = 'grey';
             }
-            else if($timestamp>=15 AND $timestamp<16)
+            else if(hour>=15 AND hour<16)
             {
                 document.getElementById('811').style.backgroundColor = 'grey';
             }
-            else if($timestamp>=16 AND $timestamp<17)
+            else if(hour>=16 AND hour<17)
             {
                 document.getElementById('911').style.backgroundColor = 'grey';
             }
