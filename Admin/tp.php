@@ -10,15 +10,15 @@
             margin: 0px;
         }
         .blinking {
-        animation: blink 1s infinite alternate; /* Smooth blinking transition */
+        animation: blink 1s infinite alternate;
     }
 
     @keyframes blink {
         from {
-            background-color: transparent; /* Starting color */
+            background-color: transparent;
         }
         to {
-            background-color: grey; /* Ending color */
+            background-color: grey;
         }
     }
     </style>
@@ -38,10 +38,8 @@
         <tr>
             <td>
                 <?php
-                    session_start(); // Start the session
+                    session_start();
                     error_reporting(E_ALL & ~E_WARNING);
-
-                    // Suppress display of errors
                     ini_set('display_errors', 0);
 
                     if(isset($_SESSION["usr"])) {
@@ -93,80 +91,72 @@
     </table>
 
     <script>
-        function find(id) {
-            x=document.GetElementByID(id).value;
-            y=x/100;
-            z=y%10;
-            if(z==1)
-            {
+    function find(id) {
+        var venue = document.getElementById(id).getAttribute('value');
+        var floor = venue.charAt(2);
+        switch (floor) {
+            case '1':
                 window.location.href = 'floor1.html';
-            }
-            else
-            if(z==2)
-            {
+                break;
+            case '2':
                 window.location.href = 'floor2.html';
-            }
-            else
-            if(z==3)
-            {
+                break;
+            case '3':
                 window.location.href = 'floor3.html';
-            }
-            else
-            if(z==4)
-            {
+                break;
+            case '4':
                 window.location.href = 'floor4.html';
-            }
-            else
-            if(z==5)
-            {
+                break;
+            case '5':
                 window.location.href = 'floor5.html';
-            }
-            else
-            if(z==6)
-            {
+                break;
+            case '6':
                 window.location.href = 'floor6.html';
-            }
-            else
-            if(z==7)
-            {
+                break;
+            case '7':
                 window.location.href = 'floor7.html';
-            }
-            else
-            {
+                break;
+            case '8':
                 window.location.href = 'floor8.html';
+                break;
+            default:
+                break;
             }
         }
-
     </script>
+
     <script>
         function updateTimetable() {
             var currentTime = new Date();
             var hour = currentTime.getHours();
             var minute = currentTime.getMinutes();
-            var day = currentTime.getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
+            var day = currentTime.getDay();
 
             if (day === 1) {
+                var cellId;
                 if (hour === 8) {
-                    document.getElementById('111').style.backgroundColor = 'grey';
+                    cellId = '111';
                 } else if (hour === 9) {
-                    document.getElementById('211').style.backgroundColor = 'grey';
+                    cellId = '211';
                 } else if (hour === 10) {
-                    document.getElementById('311').style.backgroundColor = 'grey';
+                    cellId = '311';
                 } else if (hour === 11) {
-                    document.getElementById('411').style.backgroundColor = 'grey';
+                    cellId = '411';
                 } else if (hour === 12) {
-                    document.getElementById('511').style.backgroundColor = 'grey';
+                    cellId = '511';
                 } else if (hour === 13) {
-                    document.getElementById('611').style.backgroundColor = 'grey';
+                    cellId = '611';
                 } else if (hour === 14) {
-                    document.getElementById('711').style.backgroundColor = 'grey';
+                    cellId = '711';
                 } else if (hour === 15) {
-                    document.getElementById('811').style.backgroundColor = 'grey';
+                    cellId = '811';
                 } else if (hour === 16) {
-                    document.getElementById('911').style.backgroundColor = 'grey';
+                    cellId = '911';
                 } else {
-                    document.getElementById('1011').style.backgroundColor = 'grey';
+                    cellId = '1011';
                 }
+                var cell = document.getElementById(cellId);
+                cell.classList.add('blinking');
             }
             if (day === 2) {
                 var cellId;
@@ -191,101 +181,112 @@
                 } else {
                     cellId = '1012';
                 }
-                
                 var cell = document.getElementById(cellId);
-            cell.classList.add('blinking'); // Add class to initiate smooth blinking transition
-        }               
+                cell.classList.add('blinking');
+            }               
             if (day === 3) {
+                var cellId;
                 if (hour === 8) {
-                    document.getElementById('113').style.backgroundColor = 'grey';
+                    cellId = '113';
                 } else if (hour === 9) {
-                    document.getElementById('213').style.backgroundColor = 'grey';
+                    cellId = '213';
                 } else if (hour === 10) {
-                    document.getElementById('313').style.backgroundColor = 'grey';
+                    cellId = '313';
                 } else if (hour === 11) {
-                    document.getElementById('413').style.backgroundColor = 'grey';
+                    cellId = '413';
                 } else if (hour === 12) {
-                    document.getElementById('513').style.backgroundColor = 'grey';
+                    cellId = '513';
                 } else if (hour === 13) {
-                    document.getElementById('613').style.backgroundColor = 'grey';
+                    cellId = '613';
                 } else if (hour === 14) {
-                    document.getElementById('713').style.backgroundColor = 'grey';
+                    cellId = '713';
                 } else if (hour === 15) {
-                    document.getElementById('813').style.backgroundColor = 'grey';
+                    cellId = '813';
                 } else if (hour === 16) {
-                    document.getElementById('913').style.backgroundColor = 'grey';
+                    cellId = '913';
                 } else {
-                    document.getElementById('1013').style.backgroundColor = 'grey';
+                    cellId = '1013';
                 }
+                var cell = document.getElementById(cellId);
+                cell.classList.add('blinking');
             }
             if (day === 4) {
+                var cellId;
                 if (hour === 8) {
-                    document.getElementById('114').style.backgroundColor = 'grey';
+                    cellId = '114';
                 } else if (hour === 9) {
-                    document.getElementById('214').style.backgroundColor = 'grey';
+                    cellId = '214';
                 } else if (hour === 10) {
-                    document.getElementById('314').style.backgroundColor = 'grey';
+                    cellId = '314';
                 } else if (hour === 11) {
-                    document.getElementById('414').style.backgroundColor = 'grey';
+                    cellId = '414';
                 } else if (hour === 12) {
-                    document.getElementById('514').style.backgroundColor = 'grey';
+                    cellId = '514';
                 } else if (hour === 13) {
-                    document.getElementById('614').style.backgroundColor = 'grey';
+                    cellId = '614';
                 } else if (hour === 14) {
-                    document.getElementById('714').style.backgroundColor = 'grey';
+                    cellId = '714';
                 } else if (hour === 15) {
-                    document.getElementById('814').style.backgroundColor = 'grey';
+                    cellId = '814';
                 } else if (hour === 16) {
-                    document.getElementById('914').style.backgroundColor = 'grey';
+                    cellId = '914';
                 } else {
-                    document.getElementById('1014').style.backgroundColor = 'grey';
+                    cellId = '1014';
                 }
+                var cell = document.getElementById(cellId);
+                cell.classList.add('blinking');
             }
             if (day === 5) {
+                var cellId;
                 if (hour === 8) {
-                    document.getElementById('115').style.backgroundColor = 'grey';
+                    cellId = '115';
                 } else if (hour === 9) {
-                    document.getElementById('215').style.backgroundColor = 'grey';
+                    cellId = '215';
                 } else if (hour === 10) {
-                    document.getElementById('315').style.backgroundColor = 'grey';
+                    cellId = '315';
                 } else if (hour === 11) {
-                    document.getElementById('415').style.backgroundColor = 'grey';
+                    cellId = '415';
                 } else if (hour === 12) {
-                    document.getElementById('515').style.backgroundColor = 'grey';
+                    cellId = '515';
                 } else if (hour === 13) {
-                    document.getElementById('615').style.backgroundColor = 'grey';
+                    cellId = '615';
                 } else if (hour === 14) {
-                    document.getElementById('715').style.backgroundColor = 'grey';
+                    cellId = '715';
                 } else if (hour === 15) {
-                    document.getElementById('815').style.backgroundColor = 'grey';
+                    cellId = '815';
                 } else if (hour === 16) {
-                    document.getElementById('915').style.backgroundColor = 'grey';
+                    cellId = '915';
                 } else {
-                    document.getElementById('1015').style.backgroundColor = 'grey';
+                    cellId = '1015';
                 }
+                var cell = document.getElementById(cellId);
+                cell.classList.add('blinking');
             }
             if (day === 6) {
+                var cellId;
                 if (hour === 8) {
-                    document.getElementById('116').style.backgroundColor = 'grey';
+                    cellId = '116';
                 } else if (hour === 9) {
-                    document.getElementById('216').style.backgroundColor = 'grey';
+                    cellId = '216';
                 } else if (hour === 10) {
-                    document.getElementById('316').style.backgroundColor = 'grey';
+                    cellId = '316';
                 } else if (hour === 11) {
-                    document.getElementById('416').style.backgroundColor = 'grey';
+                    cellId = '416';
                 } else if (hour === 12) {
-                    document.getElementById('516').style.backgroundColor = 'grey';
+                    cellId = '516';
                 } else if (hour === 13) {
-                    document.getElementById('616').style.backgroundColor = 'grey';
+                    cellId = '616';
                 } else if (hour === 14) {
-                    document.getElementById('716').style.backgroundColor = 'grey';
+                    cellId = '716';
                 } else if (hour === 15) {
-                    document.getElementById('816').style.backgroundColor = 'grey';
+                    cellId = '816';
                 } else if (hour === 16) {
-                    document.getElementById('916').style.backgroundColor = 'grey';
+                    cellId = '916';
                 } else {
-                    document.getElementById('1016').style.backgroundColor = 'grey';
+                    cellId = '1016';
                 }
+                var cell = document.getElementById(cellId);
+                cell.classList.add('blinking');
             }
 
             setTimeout(updateTimetable, 750);
