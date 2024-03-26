@@ -28,7 +28,7 @@
         <col width="570"><col width="400"><col width="300">
         <thead>
             <tr>
-                <th><a href="Home.html" target="_parent">ON THE GO</a></th>
+                <th><a href="../Student/Home.html" target="_parent">ON THE GO</a></th>
                 <th>DETAILS</th>
                 <th align="right"><img src="../Student/Images/account.png" height="50" width="50"><img src></th>
             </tr>
@@ -77,7 +77,7 @@
                                 $row4 = mysqli_fetch_assoc($result4);
                                 $v=$i.$j;
                                 $x=$row4["venue"];
-                                echo "<td width='250px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Batch"]."</td>";
+                                echo "<td width='250px' height='58.5px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Batch"]."</td>";
                             }
                             echo "</tr>";
                         }
@@ -105,10 +105,10 @@
                 window.location.href = 'floor3.html';
                 break;
             case '4':
-                window.location.href = 'floor4.html';
+                window.location.href = 'floor4.php';
                 break;
             case '5':
-                window.location.href = 'floor5.html';
+                window.location.href = 'floor5.php';
                 break;
             case '6':
                 window.location.href = 'floor6.html';
