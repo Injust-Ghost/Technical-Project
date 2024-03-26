@@ -21,14 +21,14 @@
             $x=$_SESSION["venue"];
             echo "<script>
                   var selectedClass = $x;
-                  selectedClass.style.backgroundColor = "cyan";
+                  selectedClass.style.backgroundColor = 'cyan';
 
-                  var previouslySelectedClass = document.getElementById(list.getAttribute("data-selected"));
+                  var previouslySelectedClass = document.getElementById(list.getAttribute('data-selected'));
                   if (previouslySelectedClass) {
                   previouslySelectedClass.style.backgroundColor = "";
                   }
 
-                  list.setAttribute("data-selected", x);
+                  list.setAttribute('data-selected', x);
                   </script>";
             session_close();
     ?>
