@@ -16,6 +16,22 @@
                 </tr>
             </thead>
     </table>
+    <?php
+            session_start();
+            $x=$_SESSION["venue"];
+            echo "<script>
+                  var selectedClass = $x;
+                  selectedClass.style.backgroundColor = "cyan";
+
+                  var previouslySelectedClass = document.getElementById(list.getAttribute("data-selected"));
+                  if (previouslySelectedClass) {
+                  previouslySelectedClass.style.backgroundColor = "";
+                  }
+
+                  list.setAttribute("data-selected", x);
+                  </script>";
+            session_close();
+    ?>
     <table height="100" width="100%" border="1">
         <tbody>
             <tr>
