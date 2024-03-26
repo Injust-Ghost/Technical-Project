@@ -9,6 +9,18 @@
         body {
             margin: 0px;
         }
+        .blinking {
+        animation: blink 1s infinite alternate; /* Smooth blinking transition */
+    }
+
+    @keyframes blink {
+        from {
+            background-color: transparent; /* Starting color */
+        }
+        to {
+            background-color: grey; /* Ending color */
+        }
+    }
     </style>
 </head>
 <body>
@@ -22,7 +34,7 @@
             </tr>
         </thead>
     </table>
-    <table border='0' width='100%' height='90%'>
+    <table border='0' width='100%' height='100%'>
         <tr>
             <td>
                 <?php
@@ -131,57 +143,152 @@
             var currentTime = new Date();
             var hour = currentTime.getHours();
             var minute = currentTime.getMinutes();
-            var day = currentTime.getDay(); 
+            var day = currentTime.getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
 
-            document.write(currentTime);
-            document.write(hour);
-            document.write(minute);
-            document.write(day);
-            if(day === 1 )
-            {
-                if(hour>=8 AND hour<9)
-                {
+            if (day === 1) {
+                if (hour === 8) {
                     document.getElementById('111').style.backgroundColor = 'grey';
-                }
-                else if(hour>=9 AND hour<10)
-                {
+                } else if (hour === 9) {
                     document.getElementById('211').style.backgroundColor = 'grey';
-                }
-                else if(hour>=10 AND hour<11)
-                {
+                } else if (hour === 10) {
                     document.getElementById('311').style.backgroundColor = 'grey';
-                }
-                else if(hour>=11 AND hour<12)
-                {
+                } else if (hour === 11) {
                     document.getElementById('411').style.backgroundColor = 'grey';
-                }
-                else if(hour>=12 AND hour<13)
-                {
+                } else if (hour === 12) {
                     document.getElementById('511').style.backgroundColor = 'grey';
-                }
-                else if(hour>=13 AND hour<14)
-                {
+                } else if (hour === 13) {
                     document.getElementById('611').style.backgroundColor = 'grey';
-                }
-                else if(hour>=14 AND hour<15)
-                {
+                } else if (hour === 14) {
                     document.getElementById('711').style.backgroundColor = 'grey';
-                }
-                else if(hour>=15 AND hour<16)
-                {
+                } else if (hour === 15) {
                     document.getElementById('811').style.backgroundColor = 'grey';
-                }
-                else if(hour>=16 AND hour<17)
-                {
+                } else if (hour === 16) {
                     document.getElementById('911').style.backgroundColor = 'grey';
-                }
-                else
-                {            
+                } else {
                     document.getElementById('1011').style.backgroundColor = 'grey';
                 }
             }
+            if (day === 2) {
+                var cellId;
+                if (hour === 8) {
+                    cellId = '112';
+                } else if (hour === 9) {
+                    cellId = '212';
+                } else if (hour === 10) {
+                    cellId = '312';
+                } else if (hour === 11) {
+                    cellId = '412';
+                } else if (hour === 12) {
+                    cellId = '512';
+                } else if (hour === 13) {
+                    cellId = '612';
+                } else if (hour === 14) {
+                    cellId = '712';
+                } else if (hour === 15) {
+                    cellId = '812';
+                } else if (hour === 16) {
+                    cellId = '912';
+                } else {
+                    cellId = '1012';
+                }
+                
+                var cell = document.getElementById(cellId);
+            cell.classList.add('blinking'); // Add class to initiate smooth blinking transition
+        }               
+            if (day === 3) {
+                if (hour === 8) {
+                    document.getElementById('113').style.backgroundColor = 'grey';
+                } else if (hour === 9) {
+                    document.getElementById('213').style.backgroundColor = 'grey';
+                } else if (hour === 10) {
+                    document.getElementById('313').style.backgroundColor = 'grey';
+                } else if (hour === 11) {
+                    document.getElementById('413').style.backgroundColor = 'grey';
+                } else if (hour === 12) {
+                    document.getElementById('513').style.backgroundColor = 'grey';
+                } else if (hour === 13) {
+                    document.getElementById('613').style.backgroundColor = 'grey';
+                } else if (hour === 14) {
+                    document.getElementById('713').style.backgroundColor = 'grey';
+                } else if (hour === 15) {
+                    document.getElementById('813').style.backgroundColor = 'grey';
+                } else if (hour === 16) {
+                    document.getElementById('913').style.backgroundColor = 'grey';
+                } else {
+                    document.getElementById('1013').style.backgroundColor = 'grey';
+                }
+            }
+            if (day === 4) {
+                if (hour === 8) {
+                    document.getElementById('114').style.backgroundColor = 'grey';
+                } else if (hour === 9) {
+                    document.getElementById('214').style.backgroundColor = 'grey';
+                } else if (hour === 10) {
+                    document.getElementById('314').style.backgroundColor = 'grey';
+                } else if (hour === 11) {
+                    document.getElementById('414').style.backgroundColor = 'grey';
+                } else if (hour === 12) {
+                    document.getElementById('514').style.backgroundColor = 'grey';
+                } else if (hour === 13) {
+                    document.getElementById('614').style.backgroundColor = 'grey';
+                } else if (hour === 14) {
+                    document.getElementById('714').style.backgroundColor = 'grey';
+                } else if (hour === 15) {
+                    document.getElementById('814').style.backgroundColor = 'grey';
+                } else if (hour === 16) {
+                    document.getElementById('914').style.backgroundColor = 'grey';
+                } else {
+                    document.getElementById('1014').style.backgroundColor = 'grey';
+                }
+            }
+            if (day === 5) {
+                if (hour === 8) {
+                    document.getElementById('115').style.backgroundColor = 'grey';
+                } else if (hour === 9) {
+                    document.getElementById('215').style.backgroundColor = 'grey';
+                } else if (hour === 10) {
+                    document.getElementById('315').style.backgroundColor = 'grey';
+                } else if (hour === 11) {
+                    document.getElementById('415').style.backgroundColor = 'grey';
+                } else if (hour === 12) {
+                    document.getElementById('515').style.backgroundColor = 'grey';
+                } else if (hour === 13) {
+                    document.getElementById('615').style.backgroundColor = 'grey';
+                } else if (hour === 14) {
+                    document.getElementById('715').style.backgroundColor = 'grey';
+                } else if (hour === 15) {
+                    document.getElementById('815').style.backgroundColor = 'grey';
+                } else if (hour === 16) {
+                    document.getElementById('915').style.backgroundColor = 'grey';
+                } else {
+                    document.getElementById('1015').style.backgroundColor = 'grey';
+                }
+            }
+            if (day === 6) {
+                if (hour === 8) {
+                    document.getElementById('116').style.backgroundColor = 'grey';
+                } else if (hour === 9) {
+                    document.getElementById('216').style.backgroundColor = 'grey';
+                } else if (hour === 10) {
+                    document.getElementById('316').style.backgroundColor = 'grey';
+                } else if (hour === 11) {
+                    document.getElementById('416').style.backgroundColor = 'grey';
+                } else if (hour === 12) {
+                    document.getElementById('516').style.backgroundColor = 'grey';
+                } else if (hour === 13) {
+                    document.getElementById('616').style.backgroundColor = 'grey';
+                } else if (hour === 14) {
+                    document.getElementById('716').style.backgroundColor = 'grey';
+                } else if (hour === 15) {
+                    document.getElementById('816').style.backgroundColor = 'grey';
+                } else if (hour === 16) {
+                    document.getElementById('916').style.backgroundColor = 'grey';
+                } else {
+                    document.getElementById('1016').style.backgroundColor = 'grey';
+                }
+            }
 
-            setTimeout(updateTimetable, 60000);
+            setTimeout(updateTimetable, 750);
         }
 
         updateTimetable();
