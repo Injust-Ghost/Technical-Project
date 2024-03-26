@@ -93,6 +93,7 @@
     <script>
     function find(id) {
         var venue = document.getElementById(id).getAttribute('value');
+        sessionStorage.setItem('Value',venue);
         var floor = venue.charAt(2);
         switch (floor) {
             case '1':
@@ -124,13 +125,6 @@
             }
         }
     </script>
-    <?php
-            
-            session_start();
-            $x= echo "<script>document.writeln(venue);</script>";
-            $_SESSION["venue"]=$x;
-            session_close();
-    ?>
     <script>
         function updateTimetable() {
             var currentTime = new Date();
