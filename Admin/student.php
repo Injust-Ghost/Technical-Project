@@ -35,6 +35,7 @@
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
             text-align: left;
+            z-index: 1;
         }
         
         
@@ -144,6 +145,7 @@
     <script>
     function find(id) {
         var venue = document.getElementById(id).getAttribute('value');
+        console.log("Venue value:", venue);
         sessionStorage.setItem('venueValue',venue);
         var floor = venue.charAt(2);
         switch (floor) {

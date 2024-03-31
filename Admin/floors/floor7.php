@@ -9,7 +9,7 @@
             <col width="570"><col width="400"><col width="300">
                 <thead>
                     <tr>
-                        <th><a href="../Home.html" target="_parent">ON THE GO</a></th>
+                        <th><a href="../../Student/Home.html" target="_parent">ON THE GO</a></th>
                         <th>DETAILS</th>
                         <th align="right"><img src="../../Student/Images/account.png" height="50" width="50"><img src></th>
                     </tr>
