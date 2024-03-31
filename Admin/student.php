@@ -11,18 +11,45 @@
         }
         .blinking {
         animation: blink 1s infinite alternate;
-    }
+        }
 
-    @keyframes blink {
-        from {
-            background-color: transparent;
+        @keyframes blink {
+            from {
+                background-color: transparent;
+            }
+            to {
+                background-color: grey;
+            }
         }
-        to {
-            background-color: grey;
+        #details-box {
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            width: 200px;
+            height: auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            text-align: left;
         }
-    }
+        
+        
+        #profile-img-container {
+            position: relative;
+            display: inline-block;
+            left: 230px;
+        }
+        #profile-img:hover + #details-box,
+        #profile-img-container.clicked #details-box {
+            opacity: 1;
+        }
     </style>
 </head>
+
 <body>
     <table height="10%" width="100%" border="0" bgcolor="bisque">
         <col width="570"><col width="400"><col width="300">
@@ -30,15 +57,24 @@
             <tr>
                 <th><a href="../Student/Home.html" target="_parent">ON THE GO</a></th>
                 <th>DETAILS</th>
-                <th align="right"><img src="../Student/Images/account.png" height="50" width="50"><img src></th>
+                <th align="right" id="profile-img-container">
+                    <img id="profile-img" src="../Student/Images/account.png" height="50" width="50">
+                        <div id="details-box">
+                            <?php
+                                include 'fetch_student_details.php';
+                            ?>
+                        </div>
+                </th>
             </tr>
         </thead>
     </table>
+    <div id="student-details">
+        <!-- Student details will be displayed here -->
+    </div>
     <table border='0' width='100%' height='100%'>
         <tr>
             <td>
                 <?php
-                    session_start();
                     error_reporting(E_ALL & ~E_WARNING);
                     ini_set('display_errors', 0);
 
@@ -89,7 +125,22 @@
             </td>     
         </tr>
     </table>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var profileImg = document.getElementById('profile-img');
+            var detailsBox = document.getElementById('details-box');
 
+            profileImg.addEventListener('click', function(event) {
+                detailsBox.parentNode.classList.toggle('clicked');
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!profileImg.contains(event.target)) {
+                    detailsBox.parentNode.classList.remove('clicked');
+                }
+            });
+        });
+    </script>
     <script>
     function find(id) {
         var venue = document.getElementById(id).getAttribute('value');
