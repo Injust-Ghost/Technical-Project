@@ -3,13 +3,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="floor.css">
+        
     </head>
     <body>
-        <script>
-            var value= sessionStorage.getItem('Value');
-            document.getElementById(value).style.backgroundColor='Cyan';
-            window.alert(value);
-        </script>
+        
         <table height="10%" width="100%" border="0" bgcolor="bisque">
             <col width="570"><col width="400"><col width="300">
                 <thead>
@@ -145,3 +142,12 @@
         </table>
     </body>
 </html>
+<script>
+    var venueValue = sessionStorage.getItem('venueValue');
+    console.log("Retrieved venue value:", venueValue);
+    var cell = document.getElementById(venueValue);
+    if (cell) {
+        cell.classList.add('cyan');
+        cell.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+</script>

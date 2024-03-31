@@ -147,3 +147,12 @@
     </table>
 </body>
 </html>
+
+<script>
+    var venueValue = sessionStorage.getItem('venueValue');
+    var cell = document.getElementById(venueValue);
+    if (cell) {
+        cell.classList.add('cyan');
+        cell.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+</script>

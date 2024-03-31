@@ -1,18 +1,9 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="floor.css">
-        <style>
-            a
-            {
-                text-decoration: none;
-                color: black;
-            }
-            body 
-            {
-                margin: 0%;
-            }
-            </style>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="floor.css">
+</head>
     <body>
         <table height="10%" width="100%" border="0" bgcolor="bisque">
             <col width="570"><col width="400"><col width="300">
@@ -20,50 +11,10 @@
                     <tr>
                         <th><a href="../Home.html" target="_parent">ON THE GO</a></th>
                         <th>DETAILS</th>
-                        <th align="right"><img src="../Images/account.png" height="50" width="50"><img src></th>
+                        <th align="right"><img src="../Student/Images/account.png" height="50" width="50"><img src></th>
                     </tr>
                 </thead>
         </table>
-        <script>
-            function myfunction() {
-                var options = document.querySelectorAll('#list option');
-                options.forEach(function (option) {
-                    option.style.backgroundColor = '';
-                });
-
-                var x = list.value;
-                var selectedClass = document.getElementById(x);
-                selectedClass.style.backgroundColor = "cyan";
-                selectedClass.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-                var previouslySelectedClass = document.getElementById(list.getAttribute("data-selected"));
-                if (previouslySelectedClass) {
-                    previouslySelectedClass.style.backgroundColor = "";
-                }
-
-                list.setAttribute("data-selected", x);
-            }
-        </script>
-        <form>
-            <label for="options">Select the Class you want to find:</label>
-            <select id="list" name="list">
-                <option value="CR201" id="ClassName" name="ClassCode">CR201</option>
-                <option value="CR202" id="ClassName" name="ClassCode">CR202</option>
-                <option value="CR203" id="ClassName" name="ClassCode">CR203</option>
-                <option value="CR204" id="ClassName" name="ClassCode">CR204</option>
-                <option value="CR205" id="ClassName" name="ClassCode">CR205</option>
-                <option value="CR206" id="ClassName" name="ClassCode">CR206</option>
-                <option value="CR207" id="ClassName" name="ClassCode">CR207</option>
-                <option value="CR208" id="ClassName" name="ClassCode">CR208</option>
-                <option value="CR209" id="ClassName" name="ClassCode">CR209</option>
-                <option value="TR201" id="ClassName" name="ClassCode">TR201</option>
-                <option value="TR202" id="ClassName" name="ClassCode">TR202</option>
-                <option value="TR203" id="ClassName" name="ClassCode">TR203</option>
-                <option value="CC201" id="ClassName" name="ClassCode">CC201</option>
-                <option value="PHYLB" id="ClassName" name="ClassCode">Physics Lab</option>
-            </select>
-        <button type="button" onclick="myfunction()">Find Class</button>
-        </form>
         <table height="100" width="100%" border="1">
             <tbody>
                 <tr>
@@ -179,4 +130,12 @@
         </table>
     </body>
 </html>
-                
+
+<script>
+    var venueValue = sessionStorage.getItem('venueValue');
+    var cell = document.getElementById(venueValue);
+    if (cell) {
+        cell.classList.add('cyan');
+        cell.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+</script>

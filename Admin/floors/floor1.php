@@ -1,19 +1,10 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="floor.css">
-        <style>
-            a
-            {
-                text-decoration: none;
-                color: black;
-            }
-            body 
-            {
-                margin: 0%;
-            }
-            </style>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="floor.css">
+</head>
+<body>
         <table height="10%" width="100%" border="0" bgcolor="bisque">
             <col width="570"><col width="400"><col width="300">
                 <thead>
@@ -24,47 +15,6 @@
                     </tr>
                 </thead>
         </table>
-        <script>
-            function myfunction() {
-                var options = document.querySelectorAll('#list option');
-                options.forEach(function (option) {
-                    option.style.backgroundColor = '';
-                });
-
-                var x = list.value;
-                var selectedClass = document.getElementById(x);
-                selectedClass.style.backgroundColor = "cyan";
-                selectedClass.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-                var previouslySelectedClass = document.getElementById(list.getAttribute("data-selected"));
-                if (previouslySelectedClass) {
-                    previouslySelectedClass.style.backgroundColor = "";
-                }
-
-                list.setAttribute("data-selected", x);
-            }
-        </script>
-        <form>
-            <label for="options">Select the Class you want to find:</label>
-            <select id="list" name="list">
-                <option value="CR101" id="ClassName" name="ClassCode">CR101</option>
-                <option value="CR102" id="ClassName" name="ClassCode">CR102</option>
-                <option value="CR103" id="ClassName" name="ClassCode">CR103</option>
-                <option value="CR104" id="ClassName" name="ClassCode">CR104</option>
-                <option value="CR105" id="ClassName" name="ClassCode">CR105</option>
-                <option value="CR106" id="ClassName" name="ClassCode">CR106</option>
-                <option value="CR107" id="ClassName" name="ClassCode">CR107</option>
-                <option value="CR108" id="ClassName" name="ClassCode">CR108</option>
-                <option value="TR101" id="ClassName" name="ClassCode">TR101</option>
-                <option value="CL101" id="ClassName" name="ClassCode">CL101</option>
-                <option value="CL102" id="ClassName" name="ClassCode">CL102</option>
-                <option value="DEANO" id="ClassName" name="ClassCode">Dean's Office</option>
-                <option value="HRDL1" id="ClassName" name="ClassCode">Hardware Lab 1</option>
-                <option value="HRDL2" id="ClassName" name="ClassCode">Hardware Lab 2</option>
-                <option value="HRDL3" id="ClassName" name="ClassCode">Hardware Lab 3</option>
-            </select>
-        <button type="button" onclick="myfunction()">Find Class</button>
-        </form>
         <table height="100" width="100%" border="1">
             <tbody>
                 <tr>
@@ -89,7 +39,7 @@
                                     <td height="90" id="CR102">CR 102</td>
                                 </tr>
                                 <tr>
-                                    <td height="90" id="TR101">TR 101</td>
+                                    <td height="90" id="CR101">TR 101</td>
                                 </tr>
                                 <tr>
                                     <td height="50">Washrooms</td>
@@ -186,4 +136,11 @@
         </table>
     </body>
 </html>
-                
+<script>
+    var venueValue = sessionStorage.getItem('venueValue');
+    var cell = document.getElementById(venueValue);
+    if (cell) {
+        cell.classList.add('cyan');
+        cell.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+</script>

@@ -1,18 +1,9 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="floor.css">
-        <style>
-            a
-            {
-                text-decoration: none;
-                color: black;
-            }
-            body 
-            {
-                margin: 0%;
-            }
-            </style>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="floor.css">
+</head>
     <body>
         <table height="10%" width="100%" border="0" bgcolor="bisque">
             <col width="570"><col width="400"><col width="300">
@@ -20,53 +11,10 @@
                     <tr>
                         <th><a href="../Home.html" target="_parent">ON THE GO</a></th>
                         <th>DETAILS</th>
-                        <th align="right"><img src="../Images/account.png" height="50" width="50"><img src></th>
+                        <th align="right"><img src="../Student/Images/account.png" height="50" width="50"><img src></th>
                     </tr>
                 </thead>
         </table>
-        <script>
-            function myfunction() {
-                var options = document.querySelectorAll('#list option');
-                options.forEach(function (option) {
-                    option.style.backgroundColor = '';
-                });
-
-                var x = list.value;
-                var selectedClass = document.getElementById(x);
-                selectedClass.style.backgroundColor = "cyan";
-                selectedClass.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-                var previouslySelectedClass = document.getElementById(list.getAttribute("data-selected"));
-                if (previouslySelectedClass) {
-                    previouslySelectedClass.style.backgroundColor = "";
-                }
-
-                list.setAttribute("data-selected", x);
-            }
-        </script>
-        <form>
-            <label for="options">Select the Class you want to find:</label>
-            <select id="list" name="list">
-                <option value="CR601" id="ClassName" name="ClassCode">CR601</option>
-                <option value="CR602" id="ClassName" name="ClassCode">CR602</option>
-                <option value="CR603" id="ClassName" name="ClassCode">CR603</option>
-                <option value="CR604" id="ClassName" name="ClassCode">CR604</option>
-                <option value="CR605" id="ClassName" name="ClassCode">CR605</option>
-                <option value="CR606" id="ClassName" name="ClassCode">CR606</option>
-                <option value="CR607" id="ClassName" name="ClassCode">CR607</option>
-                <option value="CR608" id="ClassName" name="ClassCode">CR608</option>
-                <option value="CR609" id="ClassName" name="ClassCode">CR609</option>
-                <option value="CL601" id="ClassName" name="ClassCode">CL601</option> 
-                <option value="CL602" id="ClassName" name="ClassCode">CL602</option>
-                <option value="CL603" id="ClassName" name="ClassCode">CL603</option>
-                <option value="TR601" id="ClassName" name="ClassCode">TR601</option>
-                <option value="ARINL" id="ClassName" name="ClassCode">AI Lab</option>
-                <option value="ROBOL" id="ClassName" name="ClassCode">Robotics Lab</option>
-                <option value="DATCL" id="ClassName" name="ClassCode">Data Communications Lab</option>
-                <option value="ADVCL" id="ClassName" name="ClassCode">Advanced Communications Lab</option>
-            </select>
-        <button type="button" onclick="myfunction()">Find Class</button>
-        </form>
         <table height="100" width="100%" border="1">
             <tbody>
                 <tr>
@@ -195,4 +143,11 @@
         </table>
     </body>
 </html>
-                
+<script>
+    var venueValue = sessionStorage.getItem('venueValue');
+    var cell = document.getElementById(venueValue);
+    if (cell) {
+        cell.classList.add('cyan');
+        cell.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+</script>

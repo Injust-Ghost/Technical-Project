@@ -66,7 +66,7 @@
                         $semester = $row['semester'];
                         $batch= $row['Batch'];
 
-                        echo "<table border='1' width='100%' height='100%'>";
+                        echo "<table border='1' width='100%' height='90vh'>";
                         echo "<thead><tr><td>MONDAY</td><td>TUESDAY</td><td>WEDNESDAY</td><td>THURSDAY</td><td>FRIDAY</td><td>SATURDAY</td></tr></thead>";
 
                         for($i = 1; $i <= 10; $i++) {
@@ -93,32 +93,32 @@
     <script>
     function find(id) {
         var venue = document.getElementById(id).getAttribute('value');
-        sessionStorage.setItem('Value',venue);
+        sessionStorage.setItem('venueValue',venue);
         var floor = venue.charAt(2);
         switch (floor) {
             case '1':
-                window.location.href = 'floor1.html';
+                window.location.href = 'floors/floor1.php';
                 break;
             case '2':
-                window.location.href = 'floor2.html';
+                window.location.href = 'floors/floor2.php';
                 break;
             case '3':
-                window.location.href = 'floor3.html';
+                window.location.href = 'floors/floor3.php';
                 break;
             case '4':
-                window.location.href = 'floor4.php';
+                window.location.href = 'floors/floor4.php';
                 break;
             case '5':
-                window.location.href = 'floor5.php';
+                window.location.href = 'floors/floor5.php';
                 break;
             case '6':
-                window.location.href = 'floor6.html';
+                window.location.href = 'floors/floor6.php';
                 break;
             case '7':
-                window.location.href = 'floor7.html';
+                window.location.href = 'floors/floor7.php';
                 break;
             case '8':
-                window.location.href = 'floor8.html';
+                window.location.href = 'floors/floor8.php';
                 break;
             default:
                 break;

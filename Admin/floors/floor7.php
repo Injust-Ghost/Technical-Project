@@ -1,67 +1,20 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="floor.css">
-        <style>
-            a
-            {
-                text-decoration: none;
-                color: black;
-            }
-            body 
-            {
-                margin: 0%;
-            }
-            </style>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="floor.css">
+</head>
     <body>
         <table height="10%" width="100%" border="0" bgcolor="bisque">
-        <col width="570"><col width="400"><col width="300">
-            <thead>
-                <tr>
-                    <th><a href="../Home.html" target="_parent">ON THE GO</a></th>
-                    <th>DETAILS</th>
-                    <th align="right"><img src="../Images/account.png" height="50" width="50"><img src></th>
-                </tr>
-            </thead>
-    </table>
-        <script>
-            function myfunction() {
-                
-                var x = list.value;
-                var selectedClass = document.getElementById(x);
-                selectedClass.style.backgroundColor = "cyan";
-
-                selectedClass.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-                var previouslySelectedClass = document.getElementById(list.getAttribute("data-selected"));
-                if (previouslySelectedClass) {
-                    previouslySelectedClass.style.backgroundColor = "";
-                }
-
-                list.setAttribute("data-selected", x);
-            }
-        </script>
-
-        <form>
-            <label for="options">Select the Class you want to find:</label>
-            <select id="list" name="list">
-                <option value="CR701" id="ClassName" name="ClassCode">CR701</option>
-                <option value="CR702" id="ClassName" name="ClassCode">CR702</option>
-                <option value="CR703" id="ClassName" name="ClassCode">CR703</option>
-                <option value="CR704" id="ClassName" name="ClassCode">CR704</option>
-                <option value="CL701" id="ClassName" name="ClassCode">CL701</option>
-                <option value="CL702" id="ClassName" name="ClassCode">CL702</option> 
-                <option value="CL703" id="ClassName" name="ClassCode">CL703</option>
-                <option value="CL704" id="ClassName" name="ClassCode">CL704</option>
-                <option value="CL705" id="ClassName" name="ClassCode">CL705</option>
-                <option value="CL706" id="ClassName" name="ClassCode">CL706</option>
-                <option value="CC701" id="ClassName" name="ClassCode">CC701</option>
-                <option value="CC702" id="ClassName" name="ClassCode">CC702</option>
-                <option value="LIBRY" id="ClassName" name="ClassCode">Library</option>
-                <option value="ARVRL" id="ClassName" name="ClassCode">AR/VR Lab</option>
-            </select>
-        <button type="button" onclick="myfunction()">Find Class</button>
-        </form>
+            <col width="570"><col width="400"><col width="300">
+                <thead>
+                    <tr>
+                        <th><a href="../Home.html" target="_parent">ON THE GO</a></th>
+                        <th>DETAILS</th>
+                        <th align="right"><img src="../Student/Images/account.png" height="50" width="50"><img src></th>
+                    </tr>
+                </thead>
+        </table>
         <table height="100" width="100%" border="1">
             <tbody>
                 <tr>
@@ -180,4 +133,12 @@
         </table>
     </body>
 </html>
-                
+<script>
+    var venueValue = sessionStorage.getItem('venueValue');
+    console.log("Retrieved venue value:", venueValue);
+    var cell = document.getElementById(venueValue);
+    if (cell) {
+        cell.classList.add('cyan');
+        cell.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+</script>
