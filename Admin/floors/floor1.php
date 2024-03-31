@@ -11,7 +11,7 @@
                     <tr>
                         <th><a href="../Home.html" target="_parent">ON THE GO</a></th>
                         <th>DETAILS</th>
-                        <th align="right"><img src="../Images/account.png" height="50" width="50"><img src></th>
+                        <th align="right"><img src="../../Student/Images/account.png" height="50" width="50"><img src></th>
                     </tr>
                 </thead>
         </table>
