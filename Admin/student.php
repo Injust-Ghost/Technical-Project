@@ -81,7 +81,6 @@
 
                     if(isset($_SESSION["usr"])) {
                         $rd = $_SESSION["usr"];
-                        //echo $rd;
 
                         $db_host = "localhost";
                         $db_name = "project";
@@ -109,7 +108,7 @@
                         for($i = 1; $i <= 10; $i++) {
                             echo "<tr>";
                             for($j = 11; $j <= 16; $j++) {
-                                $sql4 = "SELECT subject, faculty, venue, batch FROM time_table WHERE `division`='$div' AND `semester`='$semester' AND (`Batch`='$batch' OR `Batch`='F' OR `Subject`='BREAK') AND `course`='$course' AND t_id='$i' AND d_id='$j'";
+                                $sql4 = "SELECT subject, faculty, venue, batch FROM time_table WHERE `division`='$div' AND `semester`='$semester' AND (`Batch`='$batch' OR `Batch`='$div' OR `Subject`='BREAK') AND `course`='$course' AND t_id='$i' AND d_id='$j'";
                                 $result4 = mysqli_query($conn, $sql4);
                                 $row4 = mysqli_fetch_assoc($result4);
                                 $v=$i.$j;
