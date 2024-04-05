@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
         // if (password_verify($password, $row['Password'])) {
             
-            header('Location: Student/Home.html'); 
+            header('Location: Admin/student.php'); 
         } else {
             echo '<script>window.prompt("Username or password is incorrect.");</script>';
         }

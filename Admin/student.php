@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>On The Go</title>
     <style>
+        th:not(:first-child):hover {
+            background-color: white;
+            color: #050A30;
+        }
         a {
             text-decoration: none;
-            color: black;
+            color: white;
         }
         body {
             margin: 0px;
@@ -24,7 +29,7 @@
         #details-box {
             position: absolute;
             top: 60px;
-            right: 10px;
+            right: 50px;
             width: 200px;
             height: auto;
             background-color: #fff;
@@ -37,12 +42,10 @@
             text-align: left;
             z-index: 1;
         }
-        
-        
         #profile-img-container {
             position: relative;
             display: inline-block;
-            left: 230px;
+            left: 80px;
         }
         #profile-img:hover + #details-box,
         #profile-img-container.clicked #details-box {
@@ -52,12 +55,15 @@
 </head>
 
 <body>
-    <table height="10%" width="100%" border="0" bgcolor="bisque">
-        <col width="570"><col width="400"><col width="300">
+    <table height="10%" width="100%" border="0" bgcolor="#050A30">
+        <col width="300"><col width="150"><col width="150"><col width="150"><col width="150"><col width="100">
         <thead>
             <tr>
-                <th><a href="../Student/Home.html" target="_parent">ON THE GO</a></th>
-                <th>DETAILS</th>
+                <th><a href="student.php" target="_parent">ON THE GO</a></th>
+                <th><a href="../Student/NewMasterCal.html" target="_parent">Master Calendar</a></th>
+                <th><a href="../Student/search.html" target="_parent" >Floor Search</a></th>
+                <th><a href="../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
+                <th><a href="../Student/FAQ.html" target="_parent">FAQ's</a></th>
                 <th align="right" id="profile-img-container">
                     <img id="profile-img" src="../Student/Images/account.png" height="50" width="50">
                         <div id="details-box">
@@ -125,6 +131,7 @@
             </td>     
         </tr>
     </table>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var profileImg = document.getElementById('profile-img');
