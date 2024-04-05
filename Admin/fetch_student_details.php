@@ -30,7 +30,7 @@
             echo "<tr><td class='student-details-cell'>Batch:</td><td class='student-details-cell'>" . $row["Batch"] . "</td></tr>";
             echo "<tr><td class='student-details-cell'>Semester:</td><td class='student-details-cell'>" . $row["Semester"] . "</td></tr>";
             echo "</table>";
-            echo "<form action='logout.php' method='post' target='_parent' style='display: block;'>";
+            echo "<form action='../Student/logout.php' method='post' target='_parent' style='display: block;'>";
             echo "<button class='button'>Sign out</button>";
             echo "</form>";
         } else {
