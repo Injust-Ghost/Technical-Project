@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #050A30;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    position: relative;
+    overflow: hidden; /* Hide the overflow to prevent the content from being visible during animation */
+}
+
+.left {
+    width: 0; /* Initially set width to 0 */
+    padding-right: 20px;
+    animation: slideFromLeft 1s ease-in-out forwards; /* Apply animation */
+}
+
+.right {
+    width: 0; /* Initially set width to 0 */
+    animation: slideFromRight 1s ease-in-out forwards; /* Apply animation */
+}
+
+h2 {
+    margin-top: 0;
+}
+
+button, input[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+p {
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Animation for left */
+@keyframes slideFromLeft {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 40%;
+        opacity: 1;
+    }
+}
+
+/* Animation for right */
+@keyframes slideFromRight {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 60%;
+        opacity: 1;
+    }
+}

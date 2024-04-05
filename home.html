@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <div class="left">
+        <h2>Welcome to ON THE GO!!</h2>
+        <p>
+                This web application is built for your ease and convenience. Here you can<br>
+                view your own Time Table and can find the classroom your lecture is going
+                on.    <br><br>
+                Select the button below for the type of login you want to access:                
+            </p>
+        <button onclick="location.href='student_login.html'">Student Login</button>
+        <button onclick="location.href='teacher_login.html'">Teacher Login</button>
+      </div>
+      <div class="right">
+        <h2>Sign In</h2>
+        <form action="login_process.php" method="POST">
+          <label for="username">Username:</label><br>
+          <input type="text" id="username" name="username" required><br>
+          <label for="password">Password:</label><br>
+          <input type="password" id="password" name="password" required><br>
+          <button type="submit">Sign In</button>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Signup</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 body
 {
-    background-color: bisque;
+    background-color: #050A30;
     justify-content: center;
 }
 body::-webkit-scrollbar 
@@ -16,8 +16,8 @@ body::-webkit-scrollbar-thumb
   background-color: #888;
 }
 button {
-  background-color:  rgb(86, 66, 41);
-  color: #fff;
+  background-color:  white;
+  color: #050A30;
   padding: 10px 15px;
   border: none;
   border-radius: 3px;
@@ -25,7 +25,8 @@ button {
 }
 
 button:hover {
-  background-color:  rgb(56, 43, 27);
+  background-color:#050A30;
+  color: white;
 }
 
 .slide
@@ -36,6 +37,7 @@ button:hover {
 }
 h1 {
   position: relative;
+  color: white;
   font-family: "Source Code Pro", monospace;
   position: relative;
   width: max-content;
@@ -51,21 +53,21 @@ h1::after {
 }
 
 h1::before {
-  background: bisque;
+  background: #050A30;
   animation: typewriter 2s
     steps(23) 1s forwards;
 }
 
 h1::after {
   width: 0.125em;
-  background: black;
+  background:#050A30;
   animation: typewriter 2s
       steps(24) 1s forwards,
     blink 750ms steps(24) infinite;
 }
 
 .text {
-  color: rgb(86, 66, 41);
+  color: white;
   font-family: "Source Code Pro";
   justify-content: center;
   display: flex;
