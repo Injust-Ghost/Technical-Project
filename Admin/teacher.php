@@ -10,6 +10,18 @@
         {
             margin: 0px;
         }
+        .blinking {
+        animation: blink 1s infinite alternate;
+        }
+
+        @keyframes blink {
+            from {
+                background-color: transparent;
+            }
+            to {
+                background-color: grey;
+            }
+        }
         </style>
     </head>
     <body>
