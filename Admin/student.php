@@ -156,28 +156,28 @@
         var floor = venue.charAt(2);
         switch (floor) {
             case '1':
-                window.location.href = 'floors/floor1.php';
+                window.location.href = 's_floors/floor1.php';
                 break;
             case '2':
-                window.location.href = 'floors/floor2.php';
+                window.location.href = 's_floors/floor2.php';
                 break;
             case '3':
-                window.location.href = 'floors/floor3.php';
+                window.location.href = 's_floors/floor3.php';
                 break;
             case '4':
-                window.location.href = 'floors/floor4.php';
+                window.location.href = 's_floors/floor4.php';
                 break;
             case '5':
-                window.location.href = 'floors/floor5.php';
+                window.location.href = 's_floors/floor5.php';
                 break;
             case '6':
-                window.location.href = 'floors/floor6.php';
+                window.location.href = 's_floors/floor6.php';
                 break;
             case '7':
-                window.location.href = 'floors/floor7.php';
+                window.location.href = 's_floors/floor7.php';
                 break;
             case '8':
-                window.location.href = 'floors/floor8.php';
+                window.location.href = 's_floors/floor8.php';
                 break;
             default:
                 break;

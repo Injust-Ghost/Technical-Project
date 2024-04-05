@@ -1,13 +1,15 @@
 <html>
     <head>
         <style>
-        a
-        {
-            text-decoration: none;
-            color: black;
+        th:not(:first-child):hover {
+            background-color: white;
+            color: #050A30;
         }
-        body
-        {
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        body {
             margin: 0px;
         }
         .blinking {
@@ -22,24 +24,58 @@
                 background-color: grey;
             }
         }
+        #details-box {
+            position: absolute;
+            top: 60px;
+            right: 50px;
+            width: auto;
+            height: auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            text-align: left;
+            z-index: 1;
+        }
+        #profile-img-container {
+            position: relative;
+            display: inline-block;
+            left: 80px;
+        }
+        #profile-img:hover + #details-box,
+        #profile-img-container.clicked #details-box {
+            opacity: 1;
+        }
         </style>
     </head>
     <body>
-        <table height="10%" width="100%" border="0" bgcolor="bisque">
-            <col width="570"><col width="400"><col width="300">
-                <thead>
-                    <tr>
-                        <th><a href="Home2.html" target="_parent">ON THE GO</a></th>
-                        <th>DETAILS</th>
-                        <th align="right"><img src="../Student/Images/account.png" height="50" width="50"><img src></th>
-                    </tr>
-                </thead>
-        </table>
+    <table height="10%" width="100%" border="0" bgcolor="#050A30">
+        <col width="300"><col width="150"><col width="150"><col width="150"><col width="150"><col width="100">
+        <thead>
+            <tr>
+                <th><a href="teacher.php" target="_parent">ON THE GO</a></th>
+                <th><a href="../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
+                <th><a href="../Student/search.php" target="_parent" >Floor Search</a></th>
+                <th><a href="../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
+                <th><a href="../Student/FAQ.php" target="_parent">FAQ's</a></th>
+                <th align="right" id="profile-img-container">
+                    <img id="profile-img" src="../Student/Images/account.png" height="50" width="50">
+                        <div id="details-box">
+                            <?php
+                                include 'fetch_teacher_details.php';
+                            ?>
+                        </div>
+                </th>
+            </tr>
+        </thead>
+    </table>
         <table>
             <tr>
                 <td>
                     <?php
-                        session_start(); // Start the session
                         error_reporting(E_ALL & ~E_WARNING);
 
                         // Suppress display of errors
@@ -91,34 +127,50 @@
         </table>
     </body>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var profileImg = document.getElementById('profile-img');
+            var detailsBox = document.getElementById('details-box');
+
+            profileImg.addEventListener('click', function(event) {
+                detailsBox.parentNode.classList.toggle('clicked');
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!profileImg.contains(event.target)) {
+                    detailsBox.parentNode.classList.remove('clicked');
+                }
+            });
+        });
+    </script>
+    <script>
     function find(id) {
         var venue = document.getElementById(id).getAttribute('value');
         sessionStorage.setItem('venueValue',venue);
         var floor = venue.charAt(2);
         switch (floor) {
             case '1':
-                window.location.href = 'floors/floor1.php';
+                window.location.href = 't_floors/floor1.php';
                 break;
             case '2':
-                window.location.href = 'floors/floor2.php';
+                window.location.href = 't_floors/floor2.php';
                 break;
             case '3':
-                window.location.href = 'floors/floor3.php';
+                window.location.href = 't_floors/floor3.php';
                 break;
             case '4':
-                window.location.href = 'floors/floor4.php';
+                window.location.href = 't_floors/floor4.php';
                 break;
             case '5':
-                window.location.href = 'floors/floor5.php';
+                window.location.href = 't_floors/floor5.php';
                 break;
             case '6':
-                window.location.href = 'floors/floor6.php';
+                window.location.href = 't_floors/floor6.php';
                 break;
             case '7':
-                window.location.href = 'floors/floor7.php';
+                window.location.href = 't_floors/floor7.php';
                 break;
             case '8':
-                window.location.href = 'floors/floor8.php';
+                window.location.href = 't_floors/floor8.php';
                 break;
             default:
                 break;

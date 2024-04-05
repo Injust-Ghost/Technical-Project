@@ -10,16 +10,16 @@
         <col width="300"><col width="150"><col width="150"><col width="150"><col width="150"><col width="100">
         <thead>
             <tr>
-                <th><a href="../Admin/student.php" target="_parent">ON THE GO</a></th>
-                <th><a href="../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
-                <th><a href="../Student/search.php" target="_parent" >Floor Search</a></th>
-                <th><a href="../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
-                <th><a href="../Student/FAQ.php" target="_parent">FAQ's</a></th>
+                <th><a href="../student.php" target="_parent">ON THE GO</a></th>
+                <th><a href="../../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
+                <th><a href="../../Student/search.php" target="_parent" >Floor Search</a></th>
+                <th><a href="../../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
+                <th><a href="../../Student/FAQ.php" target="_parent">FAQ's</a></th>
                 <th align="right" id="profile-img-container">
                     <img id="profile-img" src="../../Student/Images/account.png" height="50" width="50">
                         <div id="details-box">
                             <?php
-                                include '../fetch_student_details.php';
+                                include '../fetch_teacher_details.php';
                             ?>
                         </div>
                 </th>

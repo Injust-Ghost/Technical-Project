@@ -5,15 +5,15 @@
     <link rel="stylesheet" href="floor.css">
 </head>
     <body>
-    <table height="10%" width="100%" border="0" bgcolor="#050A30">
+    <<table height="10%" width="100%" border="0" bgcolor="#050A30">
         <col width="300"><col width="150"><col width="150"><col width="150"><col width="150"><col width="100">
         <thead>
             <tr>
-                <th><a href="../Admin/student.php" target="_parent">ON THE GO</a></th>
-                <th><a href="../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
-                <th><a href="../Student/search.php" target="_parent" >Floor Search</a></th>
-                <th><a href="../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
-                <th><a href="../Student/FAQ.php" target="_parent">FAQ's</a></th>
+                <th><a href="../student.php" target="_parent">ON THE GO</a></th>
+                <th><a href="../../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
+                <th><a href="../../Student/search.php" target="_parent" >Floor Search</a></th>
+                <th><a href="../../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
+                <th><a href="../../Student/FAQ.php" target="_parent">FAQ's</a></th>
                 <th align="right" id="profile-img-container">
                     <img id="profile-img" src="../../Student/Images/account.png" height="50" width="50">
                         <div id="details-box">
@@ -28,10 +28,10 @@
         <table height="100" width="100%" border="1">
             <tbody>
                 <tr>
-                    <td width="600">Faculty Room 302</td>
+                    <td width="600">Faculty Room 702</td>
                     <td width="200">Washrooms</td>
                     <td width="100">Stairs</td>
-                    <td width="600">Faculty Room 301</td>
+                    <td width="600">Faculty Room 701</td>
                 </tr>
             </tbody>
         </table>
@@ -43,16 +43,7 @@
                         <table border="1" width="100%">
                             <tbody>
                                 <tr>
-                                    <td height="125" id="CR303">CR 303</td>
-                                </tr>
-                                <tr>
-                                    <td height="85" id="TR302">TR 302</td>
-                                </tr>
-                                <tr>
-                                    <td height="85" id="TR301">TR 301</td>
-                                </tr>
-                                <tr>
-                                    <td height="125" id="GRLCR">Girls Common Room</td>
+                                    <td height="420" id="LIBRY">Library</td>
                                 </tr>
                                 <tr>
                                     <td height="50">Washrooms</td>
@@ -71,16 +62,16 @@
                                     <td height="50" width="500" colspan="2">Lifts</td>
                                 </tr>
                                 <tr>
-                                    <td width="250" height="120" id="CR309">CR 309</td>
-                                    <td width="250" height="120" id="CR310">CR 310</td>
+                                    <td width="250" height="120" id="CL706">CL 706</td>
+                                    <td width="250" height="120" id="CC702">CC702</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" height="182">FLOOR 3</td>
+                                    <td colspan="2" height="182">FLOOR 7</td>
                                 </tr>
                                 <tr>
                                     
-                                        <td height="120" id="CR308">CR 308</td>
-                                        <td height="120" id="CR307">CR 307</td>
+                                        <td height="120" id="CR704">CR 704</td>
+                                        <td height="120" id="CR703">CR 703</td>
                                     
                                 </tr>
                                 <tr>
@@ -94,16 +85,22 @@
                         <table border="1" width="100%">
                             <tbody>
                                 <tr>
-                                    <td height="160" id="CR304">CR 304</td>
+                                    <td height="140" id="CR702">CR 702</td>
                                 </tr>
                                 <tr>
                                     <td height="50">Exit</td>
                                 </tr>
                                 <tr>
-                                    <td height="130" id="CR305">CR 305</td>
+                                    <td height="70" id="CL701">CL 701</td>
                                 </tr>
                                 <tr>
-                                    <td height="130" id="CR306">CR 306</td>
+                                    <td height="70" id="CL702">CL 702</td>
+                                </tr>
+                                <tr>
+                                    <td height="70" id="CL703">CL 703</td>
+                                </tr>
+                                <tr>
+                                    <td height="70" id="CL704">CL 704</td>
                                 </tr>
                                 <tr>
                                     <td height="50">Exit</td>
@@ -122,8 +119,8 @@
                         <table height="100" width="100%" border="1">
                             <tbody>
                                 <tr>
-                                    <td width="300" id="CR302">CR 302</td>
-                                    <td width="300" id="CR301">CR 301</td>
+                                        <td width="300" id="CC701">CC 701</td>
+                                        <td width="300" id="CR701">CR 701</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -135,8 +132,8 @@
                         <table height="100" width="100%" border="1">
                             <tbody>
                                 <tr>
-                                    <td width="300" id="CC301">CC 301</td>
-                                    <td width="300" id="TR303">TR 303</td>
+                                    <td width="300" id="ARVRL">AR/VR Lab</td>
+                                    <td width="300" id="CL705">CL 705</td>
                                 </tr>
                             </tbody>
                         </table>

@@ -9,11 +9,11 @@
         <col width="300"><col width="150"><col width="150"><col width="150"><col width="150"><col width="100">
         <thead>
             <tr>
-                <th><a href="../Admin/student.php" target="_parent">ON THE GO</a></th>
-                <th><a href="../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
-                <th><a href="../Student/search.php" target="_parent" >Floor Search</a></th>
-                <th><a href="../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
-                <th><a href="../Student/FAQ.php" target="_parent">FAQ's</a></th>
+                <th><a href="../student.php" target="_parent">ON THE GO</a></th>
+                <th><a href="../../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
+                <th><a href="../../Student/search.php" target="_parent" >Floor Search</a></th>
+                <th><a href="../../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
+                <th><a href="../../Student/FAQ.php" target="_parent">FAQ's</a></th>
                 <th align="right" id="profile-img-container">
                     <img id="profile-img" src="../../Student/Images/account.png" height="50" width="50">
                         <div id="details-box">
@@ -25,13 +25,27 @@
             </tr>
         </thead>
     </table>
-        <table height="100" width="100%" border="1">
+        <table height="100" width="100%" border="0">
             <tbody>
                 <tr>
-                    <td width="600">Faculty Room 702</td>
-                    <td width="200">Washrooms</td>
-                    <td width="100">Stairs</td>
-                    <td width="600">Faculty Room 701</td>
+                    <td>
+                        <table height="100%" width="100%" border="1">
+                            <tr>
+                                <td width="600">Faculty Room 802</td>
+                                <td width="200">Washrooms</td>
+                                <td width="100">Stairs</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="100"></td>
+                    <td>
+                        <table width="100%" height="100%" border="1">
+                            <tr>
+                                <td width="100" id="3DPRL">3D Printing Lab</td>
+                                <td width="500">Faculty Room 801</td>
+                            </tr>
+                        </table>
+                    </td>                    
                 </tr>
             </tbody>
         </table>
@@ -43,7 +57,19 @@
                         <table border="1" width="100%">
                             <tbody>
                                 <tr>
-                                    <td height="420" id="LIBRY">Library</td>
+                                    <td height="90" id="PNMCL">Pneumatic Lab</td>
+                                </tr>
+                                <tr>
+                                    <td height="90" id="SIOTL">Sensor IOT Lab</td>
+                                </tr>
+                                <tr>
+                                    <td height="90" id="AUTOL">Automation Lab</td>
+                                </tr>
+                                <tr>
+                                    <td height="75" id="CL807">CL 807</td>
+                                </tr>
+                                <tr>
+                                    <td height="75" id="HYDRL">Hydraulics Lab</td>
                                 </tr>
                                 <tr>
                                     <td height="50">Washrooms</td>
@@ -62,16 +88,16 @@
                                     <td height="50" width="500" colspan="2">Lifts</td>
                                 </tr>
                                 <tr>
-                                    <td width="250" height="120" id="CL706">CL 706</td>
-                                    <td width="250" height="120" id="CC702">CC702</td>
+                                    <td width="250" height="120" id="VCRO1">V.C. Room 1</td>
+                                    <td width="250" height="120" id="VCRO2">V.C. Room 2</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" height="182">FLOOR 7</td>
+                                    <td colspan="2" height="182">FLOOR 8</td>
                                 </tr>
                                 <tr>
                                     
-                                        <td height="120" id="CR704">CR 704</td>
-                                        <td height="120" id="CR703">CR 703</td>
+                                        <td height="120" id="COCE1">Computer Center 1</td>
+                                        <td height="120" id="COCE2">Computer Center 2</td>
                                     
                                 </tr>
                                 <tr>
@@ -85,22 +111,19 @@
                         <table border="1" width="100%">
                             <tbody>
                                 <tr>
-                                    <td height="140" id="CR702">CR 702</td>
+                                    <td height="200" id="CC801">CC 801</td>
                                 </tr>
                                 <tr>
                                     <td height="50">Exit</td>
                                 </tr>
                                 <tr>
-                                    <td height="70" id="CL701">CL 701</td>
+                                    <td height="80" id="CL803">CL 803</td>
                                 </tr>
                                 <tr>
-                                    <td height="70" id="CL702">CL 702</td>
+                                    <td height="70" id="CL802">CL 802</td>
                                 </tr>
                                 <tr>
-                                    <td height="70" id="CL703">CL 703</td>
-                                </tr>
-                                <tr>
-                                    <td height="70" id="CL704">CL 704</td>
+                                    <td height="70" id="RECED">Recording and Editing Studio</td>
                                 </tr>
                                 <tr>
                                     <td height="50">Exit</td>
@@ -119,8 +142,8 @@
                         <table height="100" width="100%" border="1">
                             <tbody>
                                 <tr>
-                                        <td width="300" id="CC701">CC 701</td>
-                                        <td width="300" id="CR701">CR 701</td>
+                                        <td width="300" id="PLCM1">Placement 1</td>
+                                        <td width="300" id="PLCM2">Placement 2</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -132,8 +155,8 @@
                         <table height="100" width="100%" border="1">
                             <tbody>
                                 <tr>
-                                    <td width="300" id="ARVRL">AR/VR Lab</td>
-                                    <td width="300" id="CL705">CL 705</td>
+                                    <td width="300" id="CL804">CL 804</td>
+                                    <td width="300" id="CR801">CR 801</td>
                                 </tr>
                             </tbody>
                         </table>
