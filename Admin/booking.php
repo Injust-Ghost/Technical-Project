@@ -4,22 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="floor.css">
+    <script>
+        function checkAvailability(venueId) {
+            var time = prompt("Enter the time (HH:MM format):");
+            var day = prompt("Enter the day (YYYY-MM-DD format):");
+            var subjectName = prompt("Enter the subject name:");
+            var faculty = prompt("Enter the Faculty name:");
+            var course = prompt("Enter the Course:");
+            var semester = prompt("Enter the Semester:");
+            var specialization = prompt("Enter the Field you are in:");
+            var division = prompt("Enter the division:");
+            var batch = prompt("Enter the Batch:");
+
+            if (time && day && division && subjectName && duration) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "check_availability.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        if (xhr.responseText === "available") {
+                            var confirmBooking = confirm("Class is available. Do you want to book it?");
+                            if (confirmBooking) {
+                                bookClass(venueId, time, day, division, subjectName, duration);
+                            }
+                        } else {
+                            alert(xhr.responseText);
+                        }
+                    }
+                };
+                xhr.send("venue_id=" + venueId + "&time=" + time + "&day=" + day);
+            } else {
+                alert("Please enter all details.");
+            }
+        }
+
+        function bookClass(venueId, time, day, division, subjectName, duration) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "book_class.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    alert(xhr.responseText);
+                }
+            };
+            xhr.send("venue_id=" + venueId + "&time=" + time + "&day=" + day + "&division=" + division + "&subject_name=" + subjectName + "&duration=" + duration);
+        }
+    </script>     
 </head>
 <body>
 <table height="10%" width="100%" border="0" bgcolor="#050A30">
         <col width="300"><col width="150"><col width="150"><col width="150"><col width="150"><col width="100">
         <thead>
             <tr>
-            <th class="onthego-font"><a href="../student.php" target="_parent">ON THE GO</a></th>
-                <th class="roboto-font"><a href="../../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
-                <th class="roboto-font"><a href="../../Student/search.php" target="_parent" >Floor Search</a></th>
-                <th class="roboto-font"><a href="../../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
-                <th class="roboto-font"><a href="../../Student/FAQ.php" target="_parent">FAQ's</a></th>
+                <th><a href="student.php" target="_parent">ON THE GO</a></th>
+                <th><a href="../../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
+                <th><a href="../../Student/search.php" target="_parent" >Floor Search</a></th>
+                <th><a href="../../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
+                <th><a href="../../Student/FAQ.php" target="_parent">FAQ's</a></th>
                 <th align="right" id="profile-img-container">
-                    <img id="profile-img" src="../../Student/Images/account.png" height="50" width="50">
+                    <img id="profile-img" src="../Student/Images/account.png" height="50" width="50">
                         <div id="details-box">
                             <?php
-                                include '../fetch_teacher_details.php';
+                                include 'fetch_student_details.php';
                             ?>
                         </div>
                 </th>
@@ -44,7 +90,7 @@
                     <table border="1" width="100%">
                         <tbody>
                             <tr>
-                                <td height="70" id="CL406">CL 406</td>
+                                <td height="70" id="CL406" onclick="checkAvailability(this.id)">CL 406</td>
                             </tr>
                             <tr>
                                 <td height="70" id="CL405">CL 405</td>

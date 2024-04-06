@@ -4,12 +4,12 @@
     <title>On The Go</title>
     <style>
         th:not(:first-child):hover {
-            background-color: white;
+            background-color: #030721;
             color: #050A30;
         }
         a {
             text-decoration: none;
-            color: white;
+            color: #F1E3D2;
         }
         body {
             margin: 0px;
@@ -25,6 +25,17 @@
             to {
                 background-color: grey;
             }
+        }
+        .highlighted-cell {
+            background-color: grey;
+        }
+        .roboto-font {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+        .onthego-font {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
         }
         #details-box {
             position: absolute;
@@ -59,11 +70,11 @@
         <col width="300"><col width="150"><col width="150"><col width="150"><col width="150"><col width="100">
         <thead>
             <tr>
-                <th><a href="student.php" target="_parent">ON THE GO</a></th>
-                <th><a href="../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
-                <th><a href="../Student/search.php" target="_parent" >Floor Search</a></th>
-                <th><a href="../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
-                <th><a href="../Student/FAQ.php" target="_parent">FAQ's</a></th>
+                <th class="onthego-font"><a href="student.php" target="_parent">ON THE GO</a></th>
+                <th class="roboto-font"><a href="../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
+                <th class="roboto-font"><a href="../Student/search.php" target="_parent" >Floor Search</a></th>
+                <th class="roboto-font"><a href="../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
+                <th class="roboto-font"><a href="../Student/FAQ.php" target="_parent">FAQ's</a></th>
                 <th align="right" id="profile-img-container">
                     <img id="profile-img" src="../Student/Images/account.png" height="50" width="50">
                         <div id="details-box">
@@ -108,18 +119,18 @@
                         $semester = $row['semester'];
                         $batch= $row['Batch'];
 
-                        echo "<table border='1' width='100%' height='90vh'>";
+                        echo "<table border='1' width='100%' height='100%'>";
                         echo "<thead><tr><td>MONDAY</td><td>TUESDAY</td><td>WEDNESDAY</td><td>THURSDAY</td><td>FRIDAY</td><td>SATURDAY</td></tr></thead>";
 
                         for($i = 1; $i <= 10; $i++) {
                             echo "<tr>";
                             for($j = 11; $j <= 16; $j++) {
-                                $sql4 = "SELECT subject, faculty, venue, batch FROM time_table WHERE `division`='$div' AND `semester`='$semester' AND (`Batch`='$batch' OR `Batch`='$div' OR `Subject`='BREAK') AND `course`='$course' AND t_id='$i' AND d_id='$j'";
+                                $sql4 = "SELECT subject, faculty, venue FROM time_table WHERE `division`='$div' AND `semester`='$semester' AND (`Batch`='$batch' OR `Batch`='$div' OR `Subject`='BREAK') AND `course`='$course' AND t_id='$i' AND d_id='$j'";
                                 $result4 = mysqli_query($conn, $sql4);
                                 $row4 = mysqli_fetch_assoc($result4);
                                 $v=$i.$j;
                                 $x=$row4["venue"];
-                                echo "<td width='250px' height='58.5px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Batch"]."</td>";
+                                echo "<td width='250px' height='58.5px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>"."</td>";
                             }
                             echo "</tr>";
                         }
@@ -131,7 +142,6 @@
             </td>     
         </tr>
     </table>
-    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var profileImg = document.getElementById('profile-img');
@@ -146,6 +156,20 @@
                     detailsBox.parentNode.classList.remove('clicked');
                 }
             });
+
+            function highlightCells() {
+                var cells = document.querySelectorAll('td');
+                cells.forEach(function(cell) {
+                    var batch = cell.innerText.split('<br>')[3];
+                    var division = cell.innerText.split('<br>')[4];
+                    if (batch !== division && batch !== undefined && division !== undefined) {
+                        cell.classList.add('highlighted-cell');
+                    }
+                });
+            }
+
+            // Call the function to highlight cells initially
+            highlightCells();
         });
     </script>
     <script>
