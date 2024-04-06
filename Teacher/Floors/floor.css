@@ -37,7 +37,7 @@ button:hover {
     position: absolute;
     top: 60px;
     right: 50px;
-    width: 200px;
+    width: auto;
     height: auto;
     background-color: #fff;
     border: 1px solid #ccc;

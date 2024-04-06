@@ -21,6 +21,31 @@
             text-decoration: none;
             color: #F1E3D2;
         }
+        #details-box {
+            position: absolute;
+            top: 60px;
+            right: 50px;
+            width: auto;
+            height: auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            text-align: left;
+            z-index: 1;
+        }
+        #profile-img-container {
+            position: relative;
+            display: inline-block;
+            left: 40px;
+        }
+        #profile-img:hover + #details-box,
+        #profile-img-container.clicked #details-box {
+            opacity: 1;
+        }
         </style>
         <script>
             function mouseover() {
@@ -34,20 +59,20 @@
     </head>
 
     <body>
-        <table height="10%" width="100%" border="0" bgcolor="#050A30">
+    <table height="10%" width="100%" border="0" bgcolor="#050A30">
         <col width="300"><col width="150"><col width="150"><col width="150"><col width="150"><col width="100">
         <thead>
             <tr>
-                <th class='onthego-font'><a href="../Admin/student.php" target="_parent">ON THE GO</a></th>
-                <th class='roboto-font'><a href="../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
-                <th class='roboto-font'><a href="../Student/search.php" target="_parent" >Floor Search</a></th>
-                <th class='roboto-font'><a href="../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
-                <th class='roboto-font'><a href="../Student/FAQ.php" target="_parent">FAQ's</a></th>
+                <th class='onthego-font'><a href="../Admin/teacher.php" target="_parent">ON THE GO</a></th>
+                <th class='roboto-font'><a href="../Teacher/NewMasterCal.php" target="_parent">Master Calendar</a></th>
+                <th class='roboto-font'><a href="../Teacher/search.php" target="_parent" >Floor Search</a></th>
+                <th class='roboto-font'><a href="../Teacher/Contact_Us.php" target="_parent">Contact Us</a></th>
+                <th class='roboto-font'><a href="../Teacher/FAQ.php" target="_parent">FAQ's</a></th>
                 <th align="right" id="profile-img-container">
-                    <img id="profile-img" src="../Student/Images/account.png" height="50" width="50">
+                    <img id="profile-img" src="../Teacher/Images/account.png" height="50" width="50">
                         <div id="details-box">
                             <?php
-                                include '../Admin/fetch_student_details.php';
+                                include '../Admin/fetch_teacher_details.php';
                             ?>
                         </div>
                 </th>

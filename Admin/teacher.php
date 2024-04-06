@@ -2,12 +2,12 @@
     <head>
         <style>
         th:not(:first-child):hover {
-            background-color: white;
+            background-color: #030721;
             color: #050A30;
         }
         a {
             text-decoration: none;
-            color: white;
+            color: #F1E3D2;
         }
         body {
             margin: 0px;
@@ -15,7 +15,14 @@
         .blinking {
         animation: blink 1s infinite alternate;
         }
-
+        .roboto-font {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+        .onthego-font {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+        }
         @keyframes blink {
             from {
                 background-color: transparent;
@@ -56,13 +63,13 @@
         <col width="300"><col width="150"><col width="150"><col width="150"><col width="150"><col width="100">
         <thead>
             <tr>
-                <th class="onthego-font"><a href="student.php" target="_parent">ON THE GO</a></th>
-                <th class="roboto-font"><a href="../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
-                <th class="roboto-font"><a href="../Student/search.php" target="_parent" >Floor Search</a></th>
-                <th class="roboto-font"><a href="../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
-                <th class="roboto-font"><a href="../Student/FAQ.php" target="_parent">FAQ's</a></th>
+                <th class="onthego-font"><a href="teacher.php" target="_parent">ON THE GO</a></th>
+                <th class="roboto-font"><a href="../Teacher/NewMasterCal.php" target="_parent">Master Calendar</a></th>
+                <th class="roboto-font"><a href="../Teacher/search.php" target="_parent" >Floor Search</a></th>
+                <th class="roboto-font"><a href="../Teacher/Contact_Us.php" target="_parent">Contact Us</a></th>
+                <th class="roboto-font"><a href="../Teacher/FAQ.php" target="_parent">FAQ's</a></th>
                 <th align="right" id="profile-img-container">
-                    <img id="profile-img" src="../Student/Images/account.png" height="50" width="50">
+                    <img id="profile-img" src="../Teacher/Images/account.png" height="50" width="50">
                         <div id="details-box">
                             <?php
                                 include 'fetch_teacher_details.php';
