@@ -21,9 +21,12 @@
         }
 
         .folder:hover {
-            background-color: cyan;
+            background-color: #050A30;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            transform: scale(1.05);
+            transform: scale(1.03);
+        }
+        .folder:hover .folder-text {
+            color: white;
         }
 
         .folder-text {
