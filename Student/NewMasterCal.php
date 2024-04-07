@@ -71,20 +71,19 @@
 
     <body>
     <table height="10%" width="100%" border="0" bgcolor="#050A30">
-        <col width="300"><col width="150"><col width="150"><col width="150"><col width="100"><col width="100"><col width="100">
+        <col width="300"><col width="150"><col width="150"><col width="150"><col width="150"><col width="100">
         <thead>
             <tr>
-                <th class='onthego-font'><a href="../Admin/teacher.php" target="_parent">ON THE GO</a></th>
-                <th class='roboto-font'><a href="../Teacher/NewMasterCal.php" target="_parent">Master Calendar</a></th>
-                <th class='roboto-font'><a href="../Teacher/search.php" target="_parent" >Floor Search</a></th>
-                <th class='roboto-font'><a href="../book/search.php" target="_parent" >Booking</a></th>                
-                <th class='roboto-font'><a href="../Teacher/Contact_Us.php" target="_parent">Contact Us</a></th>
-                <th class='roboto-font'><a href="../Teacher/FAQ.php" target="_parent">FAQ's</a></th>
+                <th class='onthego-font'><a href="../Admin/student.php" target="_parent">ON THE GO</a></th>
+                <th class='roboto-font'><a href="../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
+                <th class='roboto-font'><a href="../Student/search.php" target="_parent" >Floor Search</a></th>           
+                <th class='roboto-font'><a href="../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
+                <th class='roboto-font'><a href="../Student/FAQ.php" target="_parent">FAQ's</a></th>
                 <th align="right" id="profile-img-container">
-                    <img id="profile-img" src="../Teacher/Images/account.png" height="50" width="50">
+                    <img id="profile-img" src="../Student/Images/account.png" height="50" width="50">
                         <div id="details-box">
                             <?php
-                                include '../Admin/fetch_teacher_details.php';
+                                include '../Admin/fetch_student_details.php';
                             ?>
                         </div>
                 </th>
