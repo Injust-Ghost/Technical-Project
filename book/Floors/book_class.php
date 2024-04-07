@@ -15,12 +15,17 @@ $venueId = $_POST['venue_id'];
 $time = $_POST['time'];
 $day = $_POST['day'];
 $division = $_POST['division'];
-$subjectName = $_POST['subject_name'];
-$duration = $_POST['duration'];
+$subjectName = $_POST['subjectName'];
+$duration = $_POST['duration']; 
+$spec = $_POST['specialization'];
+$course = $_POST["course"];
+$semester = $_POST['semester'];
+$faculty = $_POST["faculty"];
+$batch = $_POST["batch"];
 
 // Insert the booking into the timetable table
 $sql = "INSERT INTO timetable (`T_ID`, `D_ID`, `Subject`, `Faculty`, `Course`, `Semester`, `Specialization`, `Division`, `Batch`, `Venue`) 
-        VALUES ('$time', '$day', '$subjectName', '$division', '$duration', '$venueId')";
+        VALUES ('$time','$day','$subjectName','$faculty','$course','$semester','$spec','$division','$batch','$venueId')";
 if (mysqli_query($conn, $sql)) {
     echo "Booking successfully scheduled.";
 } else {
