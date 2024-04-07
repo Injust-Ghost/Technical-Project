@@ -46,7 +46,7 @@
                             if (xhr.responseText.trim() === "available") {
                                 var confirmBooking = confirm("Class is available. Do you want to book it?");
                                 if (confirmBooking) {
-                                    bookClass(venueId, time, day, division, subjectName,);
+                                    bookClass( time,day,subjectName,faculty,course,semester,specialization,division,batch,venueId);
                                 }
                             } else {
                                 alert(xhr.responseText);
@@ -58,22 +58,11 @@
                     }
                 };
                 // Encode parameters properly
-                var params = "venue_id=" + encodeURIComponent(venueId) + "&time=" + encodeURIComponent(time) + "&day=" + encodeURIComponent(day) + "&division=" + encodeURIComponent(division) + "&subjectName=" + encodeURIComponent(subjectName);
+                var params = "&time=" + encodeURIComponent(time) + "&day=" + encodeURIComponent(day) + "&subjectName=" + encodeURIComponent(subjectName)+"&faculty=" + encodeURIComponent(faculty)+ "&course=" + encodeURIComponent(course)+ "&semester=" + encodeURIComponent(semester)+ "&specialization=" + encodeURIComponent(specialization) + "&division=" + encodeURIComponent(division)+ "&batch=" + encodeURIComponent(batch) +"venue_id=" + encodeURIComponent(venueId);
                 xhr.send(params);
             } else {
                 alert("Please enter all details.");
             }
-        }
-        function bookClass(venueId, time, day, division, subjectName) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "book_class.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    alert(xhr.responseText);
-                }
-            };
-            xhr.send("venue_id=" + venueId + "&time=" + time + "&day=" + day + "&division=" + division + "&subject_name=" + subjectName);
         }
         function assignClickEventToTDs() {
             var tds = document.querySelectorAll('td');
