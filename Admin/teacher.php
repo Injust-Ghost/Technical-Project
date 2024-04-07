@@ -120,7 +120,7 @@
                                     $row4 = mysqli_fetch_assoc($result4);
                                     $v=$i.$j;
                                     $x=$row4["venue"];
-                                    echo "<td width='250px'height='60.5px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Course"]." ".$row4["Specialization"]."<br>".$row4["Batch"]."</td>";
+                                    echo "<td width='250px' height='60.5px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Course"]." ".$row4["Specialization"]."<br>".$row4["Batch"]."</td>";
                                 }
                                 echo "</tr>";
                             }

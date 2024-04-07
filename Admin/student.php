@@ -131,7 +131,7 @@
                                 $row4 = mysqli_fetch_assoc($result4);
                                 $v=$i.$j;
                                 $x=$row4["venue"];
-                                echo "<td width='250px' height='58.5px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>"."</td>";
+                                echo "<td width='250px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>"."</td>";
                             }
                             $tt=$tt+1;
                             echo "</tr>";
@@ -146,7 +146,7 @@
                         $result2 = mysqli_query($conn, $sql5);
 
                         echo "<table border='1' width='100%'>";
-                        echo "<thead><tr><th>Initials</th><th>Faculty Name</th></tr></thead>";
+                        echo "<thead><tr><th width='50%'>Initials</th><th width='50%'>Faculty Name</th></tr></thead>";
                         echo "<tbody>";
 
                         while ($row = $result2->fetch_assoc()) {
