@@ -137,14 +137,23 @@
                             echo "</tr>";
                         }
                         echo "</table>";
-                        $sql5="SELECT DISTINCT t.faculty, e.First Name,e.Last Name
-                        FROM timetable t,teacher e
-                        WHERE t.faculty=e.Initials AND `division`='$div' AND `semester`='$semester' AND (`Batch`='$batch' OR `Batch`='$div' OR `Subject`='BREAK') AND `course`='$course'";
-                        $result2=mysqli_query($conn,$sql5);
-                        while($row=$result2->fetch_assoc())
-                        {
-                            echo $row[faculty].$row[First Name].$row[LastName];
+
+
+                        $sql5 = "SELECT DISTINCT t.faculty AS initials, CONCAT(e.`First Name`, ' ', e.`Last Name`) AS faculty_name
+                                FROM time_table t
+                                INNER JOIN teacher e ON t.Faculty = e.Initials
+                                WHERE t.division = '$div' AND t.semester = '$semester' AND (t.Batch = '$batch' OR t.Batch = '$div' OR t.Subject = 'BREAK') AND t.course = '$course'";
+                        $result2 = mysqli_query($conn, $sql5);
+
+                        echo "<table border='1' width='100%'>";
+                        echo "<thead><tr><th>Initials</th><th>Faculty Name</th></tr></thead>";
+                        echo "<tbody>";
+
+                        while ($row = $result2->fetch_assoc()) {
+                            echo "<tr><td>".$row['initials']."</td><td>".$row['faculty_name']."</td></tr>";
                         }
+
+                        echo "</tbody></table>";
                         mysqli_close($conn); 
                     }
                 ?>
