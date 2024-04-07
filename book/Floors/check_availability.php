@@ -28,14 +28,14 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     // Venue is not available
-    echo "<script>prompt(Not_Available)</script>";
+    echo "The class is not available";
 } else {
     // Venue is available
     // Insert the booking into the timetable table
     $sql = "INSERT INTO time_table (T_ID, D_ID, Subject, Faculty, Course, Semester, Specialization, Division, Batch, Venue) 
             VALUES ('$time','$day','$subjectName','$faculty','$course','$semester','$spec','$division','$batch','$venueId')";
     if (mysqli_query($conn, $sql)) {
-        echo "<script>prompt(Available)</script>";
+        echo "The class is Available";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
