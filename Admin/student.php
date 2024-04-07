@@ -118,12 +118,12 @@
                         $course = $row['course'];
                         $semester = $row['semester'];
                         $batch= $row['Batch'];
-
+                        $tt=8;
                         echo "<table border='1' width='100%' height='100%'>";
                         echo "<thead><tr><td>MONDAY</td><td>TUESDAY</td><td>WEDNESDAY</td><td>THURSDAY</td><td>FRIDAY</td><td>SATURDAY</td></tr></thead>";
 
                         for($i = 1; $i <= 10; $i++) {
-                            echo "<tr>";
+                            echo "<tr><td>".$tt."-".$tt+1;
                             for($j = 11; $j <= 16; $j++) {
                                 $sql4 = "SELECT subject, faculty, venue FROM time_table WHERE `division`='$div' AND `semester`='$semester' AND (`Batch`='$batch' OR `Batch`='$div' OR `Subject`='BREAK') AND `course`='$course' AND t_id='$i' AND d_id='$j'";
                                 $result4 = mysqli_query($conn, $sql4);
@@ -132,6 +132,7 @@
                                 $x=$row4["venue"];
                                 echo "<td width='250px' height='58.5px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>"."</td>";
                             }
+                            $tt=$tt+1;
                             echo "</tr>";
                         }
                         echo "</table>";
