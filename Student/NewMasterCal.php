@@ -443,8 +443,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" align="middle"><a href="DATES.html"><b>DATES</b></a></td>
-                    <td align="middle"><a href="../Admin/student.php" target="_parent"><img src="Images\pngtree-vector-house-icon-png-image_4163914.jpg" height="50" width="50"></img src></a></td>
+                    <td><img src="Images/Screenshot 2023-12-26 155503.png"></img src></td>
                 </tr>
             </tbody>
         </table>
