@@ -498,6 +498,42 @@
                 <td>22nd January - 29th January</td>
                 <td>Mid Term Test 1</td>
             </tr>
+            <tr>
+                <td>25th February</td>
+                <td>2nd Defaulter Report</td>
+            </tr>
+            <tr>
+                <td>4th March - 9th March</td>
+                <td>Mid Term test 2</td>
+            </tr>
+            <tr>
+                <td>25th March</td>
+                <td>3rd Defaulter Report</td>
+            </tr>
+            <tr>
+                <td>1st April</td>
+                <td>Defaulter notice A and B</td>
+            </tr>
+            <tr>
+                <td>10th April</td>
+                <td>Final Defaulter</td>
+            </tr>
+            <tr>
+                <td>13th Arpil</td>
+                <td>Program End Date</td>
+            </tr>
+            <tr>
+                <td>17th April - 3rd May</td>
+                <td>Term End Exam</td>
+            </tr>
+            <tr>
+                <td>5th February 17th February</td>
+                <td>Re Exam Term - 1</td>
+            </tr>
+            <tr>
+                <td>25th June - 5th July</td>
+                <td>Re Exam Term - 2</td>
+            </tr>
         </table>
     </body>
     <script>

@@ -25,69 +25,71 @@
             </thead>
         </table>
         <script>
-        function checkAvailability(venueId) {
-            var time = prompt("Enter the time  ID:");
-            var day = prompt("Enter the day ID:");
-            var subjectName = prompt("Enter the subject name:");
-            var faculty = prompt("Enter the Faculty name:");
-            var course = prompt("Enter the Course:");
-            var semester = prompt("Enter the Semester:");
-            var specialization = prompt("Enter the Field you are in:");
-            var division = prompt("Enter the division:");
-            var batch = prompt("Enter the Batch:");
+            function checkAvailability(venueId) {
+                var time = prompt("Enter the time  ID:");
+                var day = prompt("Enter the day ID:");
+                var subjectName = prompt("Enter the subject name:");
+                var faculty = prompt("Enter the Faculty name:");
+                var course = prompt("Enter the Course:");
+                var semester = prompt("Enter the Semester:");
+                var specialization = prompt("Enter the Field you are in:");
+                var division = prompt("Enter the division:");
+                var batch = prompt("Enter the Batch:");
 
-            if (time && day && subjectName && faculty && course && semester && specialization && division && batch && venue) {
-                var xhr = new XMLHttpRequest();
-                xhr.open("POST", "check_availability.php", true);
-                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4) {
-                        if (xhr.status === 200) {
-                            if (xhr.responseText.trim() === "available") {
-                                var confirmBooking = confirm("Class is available. Do you want to book it?");
-                                if (confirmBooking) {
-                                    bookClass( time,day,subjectName,faculty,course,semester,specialization,division,batch,venueId);
+                if (time && day && subjectName && faculty && course && semester && specialization && division && batch && venueId) {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "check_availability.php", true);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4) {
+                            if (xhr.status === 200) {
+                                if (xhr.responseText.trim() === "available") {
+                                    var confirmBooking = confirm("Class is available. Do you want to book it?");
+                                    if (confirmBooking) {
+                                        bookClass(time, day, subjectName, faculty, course, semester, specialization, division, batch, venueId);
+                                    }
+                                } else {
+                                    alert(xhr.responseText);
                                 }
                             } else {
-                                alert(xhr.responseText);
+                                // Handle HTTP error status
+                                alert("Error: " + xhr.status + " " + xhr.statusText);
                             }
-                        } else {
-                            // Handle HTTP error status
-                            alert("Error: " + xhr.status + " " + xhr.statusText);
                         }
+                    };
+                    // Encode parameters properly
+                    var params = "time=" + encodeURIComponent(time) + "&day=" + encodeURIComponent(day) + "&subjectName=" + encodeURIComponent(subjectName) + "&faculty=" + encodeURIComponent(faculty) + "&course=" + encodeURIComponent(course) + "&semester=" + encodeURIComponent(semester) + "&specialization=" + encodeURIComponent(specialization) + "&division=" + encodeURIComponent(division) + "&batch=" + encodeURIComponent(batch) + "&venue_id=" + encodeURIComponent(venueId);
+                    xhr.send(params);
+                } else {
+                    alert("Please enter all details.");
+                }
+            }
+
+            function bookClass(time, day, subjectName, faculty, course, semester, specialization, division, batch, venueId) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "book_class.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        alert(xhr.responseText);
                     }
                 };
-                // Encode parameters properly
-                var params = "&time=" + encodeURIComponent(time) + "&day=" + encodeURIComponent(day) + "&subjectName=" + encodeURIComponent(subjectName)+"&faculty=" + encodeURIComponent(faculty)+ "&course=" + encodeURIComponent(course)+ "&semester=" + encodeURIComponent(semester)+ "&specialization=" + encodeURIComponent(specialization) + "&division=" + encodeURIComponent(division)+ "&batch=" + encodeURIComponent(batch) +"venue_id=" + encodeURIComponent(venueId);
-                xhr.send(params);
-            } else {
-                alert("Please enter all details.");
+                xhr.send("time=" + time + "&day=" + day + "&subject_name=" + subjectName + "&faculty=" + faculty + "&course=" + course + "&semester=" + semester + "&specialization=" + specialization + "&division=" + division + "&batch=" + batch + "&venue_id=" + venueId);
             }
-        }
-        function bookClass(time,day,subjectName,faculty,course,semester,specialization,division,batch,venueId) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "book_class.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    alert(xhr.responseText);
-                }
-            };
-            xhr.send("time=" + time + "&day=" + day + "&subject_name=" + subjectName+ "&faculty=" + faculty + "&course=" + course + "&semester=" + semester + "&specialization=" + specialization + "&division=" + division + "&batch=" + batch +"venue_id=" + venueId +);
-        }
-        function assignClickEventToTDs() {
-            var tds = document.querySelectorAll('td');
-            tds.forEach(function(td) {
-                td.onclick = function() {
-                    checkAvailability(this.id);
-                };
-            });
-        }
 
-        document.addEventListener('DOMContentLoaded'), function() {
-            assignClickEventToTDs();
-        }
-    </script>
+            function assignClickEventToTDs() {
+                var tds = document.querySelectorAll('td');
+                tds.forEach(function(td) {
+                    td.onclick = function() {
+                        checkAvailability(this.id);
+                    };
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                assignClickEventToTDs();
+            });
+        </script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 var profileImg = document.getElementById('profile-img');
@@ -144,7 +146,7 @@
                 <option value="HRDL2" id="ClassName" name="ClassCode">Hardware Lab 2</option>
                 <option value="HRDL3" id="ClassName" name="ClassCode">Hardware Lab 3</option>
             </select>
-        <button type="button" onclick="myfunction()">Find Class</button>
+            <button type="button" onclick="myfunction()">Find Class</button>
         </form>
         <table height="100" width="100%" border="1">
             <tbody>
@@ -164,7 +166,7 @@
                         <table border="1" width="100%">
                             <tbody>
                                 <tr>
-                                    <td height="90" id="CR103" onclick="checkAvailability(this.id)">CR 103</td>
+                                    <td height="90" id="CR103">CR 103</td>
                                 </tr>
                                 <tr>
                                     <td height="90" id="CR102">CR 102</td>
@@ -202,10 +204,8 @@
                                     <td colspan="2" height="182">FLOOR 1</td>
                                 </tr>
                                 <tr>
-                                    
-                                        <td height="120" id="CR106">CR 106</td>
-                                        <td height="120" id="CR105">CR 105</td>
-                                    
+                                    <td height="120" id="CR106">CR 106</td>
+                                    <td height="120" id="CR105">CR 105</td>
                                 </tr>
                                 <tr>
                                     <td height="50" colspan="2">Lifts</td>
@@ -224,7 +224,7 @@
                                     <td height="50">Exit</td>
                                 </tr>
                                 <tr>
-                                    <td height="210" id="">NA</td>
+                                    <td height="210">NA</td>
                                 </tr>
                                 <tr>
                                     <td height="50">Exit</td>
@@ -243,15 +243,13 @@
                         <table height="100" width="100%" border="1">
                             <tbody>
                                 <tr>
-                                        <td width="300" id="HRDL3">Hardware Lab 3</td>
-                                        <td width="300" id="HRDL2">Hardware Lab 2</td>
+                                    <td width="300" id="HRDL3">Hardware Lab 3</td>
+                                    <td width="300" id="HRDL2">Hardware Lab 2</td>
                                 </tr>
                             </tbody>
                         </table>
                     </td>
-                    <td height="100" width="300">
-
-                    </td>
+                    <td height="100" width="300"></td>
                     <td colspan="2">
                         <table height="100" width="100%" border="1">
                             <tbody>
@@ -267,4 +265,3 @@
         </table>
     </body>
 </html>
-                

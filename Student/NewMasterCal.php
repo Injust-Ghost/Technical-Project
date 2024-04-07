@@ -21,15 +21,42 @@
             text-decoration: none;
             color: #F1E3D2;
         }
+        #details-box {
+            position: absolute;
+            top: 60px;
+            right: 50px;
+            width: auto;
+            height: auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            text-align: left;
+            z-index: 1;
+        }
+        #profile-img-container {
+            position: relative;
+            display: inline-block;
+            left: 40px;
+        }
+        #profile-img:hover + #details-box,
+        #profile-img-container.clicked #details-box {
+            opacity: 1;
+        }
         .calendar-container {
-            width: 60%;
+            width: 50%;
             float: left;
+            margin: 10px;
         }
 
         .dates-table {
             width: 40%;
             float: right;
-        }   
+            margin:5px;
+        } 
         </style>
         <script>
             function mouseover() {
@@ -43,20 +70,21 @@
     </head>
 
     <body>
-        <table height="10%" width="100%" border="0" bgcolor="#050A30">
-        <col width="300"><col width="150"><col width="150"><col width="150"><col width="150"><col width="100">
+    <table height="10%" width="100%" border="0" bgcolor="#050A30">
+        <col width="300"><col width="150"><col width="150"><col width="150"><col width="100"><col width="100"><col width="100">
         <thead>
             <tr>
-                <th class='onthego-font'><a href="../Admin/student.php" target="_parent">ON THE GO</a></th>
-                <th class='roboto-font'><a href="../Student/NewMasterCal.php" target="_parent">Master Calendar</a></th>
-                <th class='roboto-font'><a href="../Student/search.php" target="_parent" >Floor Search</a></th>
-                <th class='roboto-font'><a href="../Student/Contact_Us.php" target="_parent">Contact Us</a></th>
-                <th class='roboto-font'><a href="../Student/FAQ.php" target="_parent">FAQ's</a></th>
+                <th class='onthego-font'><a href="../Admin/teacher.php" target="_parent">ON THE GO</a></th>
+                <th class='roboto-font'><a href="../Teacher/NewMasterCal.php" target="_parent">Master Calendar</a></th>
+                <th class='roboto-font'><a href="../Teacher/search.php" target="_parent" >Floor Search</a></th>
+                <th class='roboto-font'><a href="../book/search.php" target="_parent" >Booking</a></th>                
+                <th class='roboto-font'><a href="../Teacher/Contact_Us.php" target="_parent">Contact Us</a></th>
+                <th class='roboto-font'><a href="../Teacher/FAQ.php" target="_parent">FAQ's</a></th>
                 <th align="right" id="profile-img-container">
-                    <img id="profile-img" src="../Student/Images/account.png" height="50" width="50">
+                    <img id="profile-img" src="../Teacher/Images/account.png" height="50" width="50">
                         <div id="details-box">
                             <?php
-                                include '../Admin/fetch_student_details.php';
+                                include '../Admin/fetch_teacher_details.php';
                             ?>
                         </div>
                 </th>
@@ -453,11 +481,7 @@
                         </table>
                     </td>
                 </tr>
-                <tr>
-                    <td colspan="2" align="middle"><a href="DATES.html"><b>DATES</b></a></td>
-                    <td align="middle"><a href="../Admin/student.php" target="_parent"><img src="Images\pngtree-vector-house-icon-png-image_4163914.jpg" height="50" width="50"></img src></a></td>
-                </tr>
-            </tbody>
+            </tbody>            
         </table>
         <table class="dates-table" border='1'>
             <br><br><br>
@@ -475,6 +499,42 @@
             <tr>
                 <td>22nd January - 29th January</td>
                 <td>Mid Term Test 1</td>
+            </tr>
+            <tr>
+                <td>25th February</td>
+                <td>2nd Defaulter Report</td>
+            </tr>
+            <tr>
+                <td>4th March - 9th March</td>
+                <td>Mid Term test 2</td>
+            </tr>
+            <tr>
+                <td>25th March</td>
+                <td>3rd Defaulter Report</td>
+            </tr>
+            <tr>
+                <td>1st April</td>
+                <td>Defaulter notice A and B</td>
+            </tr>
+            <tr>
+                <td>10th April</td>
+                <td>Final Defaulter</td>
+            </tr>
+            <tr>
+                <td>13th Arpil</td>
+                <td>Program End Date</td>
+            </tr>
+            <tr>
+                <td>17th April - 3rd May</td>
+                <td>Term End Exam</td>
+            </tr>
+            <tr>
+                <td>5th February 17th February</td>
+                <td>Re Exam Term - 1</td>
+            </tr>
+            <tr>
+                <td>25th June - 5th July</td>
+                <td>Re Exam Term - 2</td>
             </tr>
         </table>
     </body>
@@ -495,6 +555,3 @@
         });
     </script>
 </html>
-
-
-
