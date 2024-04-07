@@ -65,9 +65,11 @@
         </thead>
         </table>
 
-    <h2>&nbsp;&nbsp;&nbsp;Contact Us</h2>
+    
 
     <form action="Contact_Us.php" method="post">
+    <h2>&nbsp;&nbsp;&nbsp;Contact Us</h2>
+    
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
