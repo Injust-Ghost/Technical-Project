@@ -17,25 +17,32 @@
             var batch = prompt("Enter the Batch:");
 
             if (time && day && division && subjectName && duration) {
-                var xhr = new XMLHttpRequest();
-                xhr.open("POST", "check_availability.php", true);
-                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                        if (xhr.responseText === "available") {
-                            var confirmBooking = confirm("Class is available. Do you want to book it?");
-                            if (confirmBooking) {
-                                bookClass(venueId, time, day, division, subjectName, duration);
-                            }
-                        } else {
-                            alert(xhr.responseText);
-                        }
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "chechk_availability.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                if (xhr.responseText.trim() === "available") {
+                    var confirmBooking = confirm("Class is available. Do you want to book it?");
+                    if (confirmBooking) {
+                        bookClass(venueId, time, day, division, subjectName, duration);
                     }
-                };
-                xhr.send("venue_id=" + venueId + "&time=" + time + "&day=" + day);
+                } else {
+                    alert(xhr.responseText);
+                }
             } else {
-                alert("Please enter all details.");
+                // Handle HTTP error status
+                alert("Error: " + xhr.status + " " + xhr.statusText);
             }
+        }
+    };
+    // Encode parameters properly
+    var params = "venue_id=" + encodeURIComponent(venueId) + "&time=" + encodeURIComponent(time) + "&day=" + encodeURIComponent(day) + "&division=" + encodeURIComponent(division) + "&subjectName=" + encodeURIComponent(subjectName) + "&duration=" + encodeURIComponent(duration);
+    xhr.send(params);
+} else {
+    alert("Please enter all details.");
+}
         }
 
         function bookClass(venueId, time, day, division, subjectName, duration) {
