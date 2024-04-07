@@ -121,10 +121,10 @@
                         $batch= $row['Batch'];
                         $tt=8;
                         echo "<table border='1' width='100%' height='100%'>";
-                        echo "<thead><tr><td>MONDAY</td><td>TUESDAY</td><td>WEDNESDAY</td><td>THURSDAY</td><td>FRIDAY</td><td>SATURDAY</td></tr></thead>";
+                        echo "<thead><tr><td width='50px'>Time</td><td>MONDAY</td><td>TUESDAY</td><td>WEDNESDAY</td><td>THURSDAY</td><td>FRIDAY</td><td>SATURDAY</td></tr></thead>";
 
                         for($i = 1; $i <= 10; $i++) {
-                            echo "<tr><td>".$tt."-".$tt+1."</td>";
+                            echo "<tr><td>".$tt."-".$tt+'1'."</td>";
                             for($j = 11; $j <= 16; $j++) {
                                 $sql4 = "SELECT subject, faculty, venue FROM time_table WHERE `division`='$div' AND `semester`='$semester' AND (`Batch`='$batch' OR `Batch`='$div' OR `Subject`='BREAK') AND `course`='$course' AND t_id='$i' AND d_id='$j'";
                                 $result4 = mysqli_query($conn, $sql4);

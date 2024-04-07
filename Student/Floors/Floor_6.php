@@ -1,6 +1,60 @@
 <html>
     <head>
         <link rel="stylesheet" href="floor.css">
+        <script>
+        function checkAvailability(venueId) {
+            var time = prompt("Enter the time (HH:MM format):");
+            var day = prompt("Enter the day (YYYY-MM-DD format):");
+            var subjectName = prompt("Enter the subject name:");
+            var faculty = prompt("Enter the Faculty name:");
+            var course = prompt("Enter the Course:");
+            var semester = prompt("Enter the Semester:");
+            var specialization = prompt("Enter the Field you are in:");
+            var division = prompt("Enter the division:");
+            var batch = prompt("Enter the Batch:");
+
+            if (time && day && subjectName && faculty && course && semester && specialization && division && batch && venue) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "check_availability.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        if (xhr.responseText.trim() === "available") {
+                            var confirmBooking = confirm("Class is available. Do you want to book it?");
+                            if (confirmBooking) {
+                                bookClass(venueId, time, day, division, subjectName);
+                            }
+                        } else {
+                            alert(xhr.responseText);
+                        }
+                    } else {
+                        // Handle HTTP error status
+                        alert("Error: " + xhr.status + " " + xhr.statusText);
+                    }
+                }
+            };
+            // Encode parameters properly
+            var params = "venue_id=" + encodeURIComponent(venueId) + "&time=" + encodeURIComponent(time) + "&day=" + encodeURIComponent(day) + "&division=" + encodeURIComponent(division) + "&subjectName=" + encodeURIComponent(subjectName);
+            xhr.send(params);
+        } else {
+            alert("Please enter all details.");
+        }
+    }
+        </script>
+        <script>
+        function bookClass(venueId, time, day, division, subjectName) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "book_class.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    alert(xhr.responseText);
+                }
+            };
+            xhr.send("venue_id=" + venueId + "&time=" + time + "&day=" + day + "&division=" + division + "&subject_name=" + subjectName);
+        }
+    </script>  
     </head>
     <body>
     <table height="10%" width="100%" border="0" bgcolor="#050A30">
