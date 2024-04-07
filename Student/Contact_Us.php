@@ -4,12 +4,22 @@
     <link rel="stylesheet" href="style.css">
     <title>Contact Us</title>
     <style>
+        h2
+        {
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+        }
         body {
             margin: 0px;
+            background-color:white;
         }
-        form {
-            max-width: 600px;
+        .contact {
+            width: 700px;
             margin: 0 auto;
+            box-shadow:0 0 10px rgba(106, 117, 200, 0.9); 
+            padding: 20px; 
+            border-radius: 20px;
+            background-color:white;
         }
         label {
             display: block;
@@ -22,8 +32,15 @@
             margin-bottom: 10px;
             box-sizing: border-box;
         }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
         .form {
-            background-color: #4CAF50;
+            background-color: #050A30;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -31,7 +48,7 @@
             cursor: pointer;
         }
         .form:hover {
-            background-color: #45a049;
+            background-color: #030721;
         }
         th:not(:first-child):hover {
             background-color: #030721;
@@ -65,25 +82,25 @@
         </thead>
         </table>
 
-    
+    <div class='container'>
+        <form class="contact" action="Contact_Us.php" method="post">
+        <h2>Contact Us</h2>
+        
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-    <form action="Contact_Us.php" method="post">
-    <h2>&nbsp;&nbsp;&nbsp;Contact Us</h2>
-    
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
 
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-
-        <button type="submit" class="form" name="submit">Submit</button>
-    </form>
+            <button type="submit" class="form" name="submit">Submit</button>
+        </form>
+    </div>
 
     <?php
     use PHPMailer\PHPMailer\PHPMailer;
@@ -115,7 +132,7 @@
                 VALUES ('$name', '$email', '$subject', '$message', '$timestamp')";
 
         if (mysqli_query($conn, $sql)) {
-            echo "<p>Your message has been sent. Thank you!</p>";
+            echo "<script>alert('Your message has been recorded. Will respond as quickly as we could. Thank you !!');</script>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
@@ -145,10 +162,10 @@
             )
         );
         
-        if($mail->send()) {
-            echo "<script>alert('Message was sent successfully!');</script>";
+        if ($mail->send()) {
+            echo "<script>alert('Your message has been sent. Thank you!');</script>";
         } else {
-            echo "<script>alert('Message sending failed: " . $mail->ErrorInfo . "');</script>";
+            echo "<script>alert('Error: " . $sql . "<br>" . mysqli_error($conn) . "');</script>";
         }
 
         mysqli_close($conn);
