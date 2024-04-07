@@ -64,6 +64,17 @@
                 alert("Please enter all details.");
             }
         }
+        function bookClass(time,day,subjectName,faculty,course,semester,specialization,division,batch,venueId) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "book_class.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    alert(xhr.responseText);
+                }
+            };
+            xhr.send("time=" + time + "&day=" + day + "&subject_name=" + subjectName+ "&faculty=" + faculty + "&course=" + course + "&semester=" + semester + "&specialization=" + specialization + "&division=" + division + "&batch=" + batch +"venue_id=" + venueId +);
+        }
         function assignClickEventToTDs() {
             var tds = document.querySelectorAll('td');
             tds.forEach(function(td) {
