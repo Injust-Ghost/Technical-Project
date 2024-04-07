@@ -60,12 +60,13 @@
     </head>
     <body>
     <table height="10%" width="100%" border="0" bgcolor="#050A30">
-        <col width="300"><col width="150"><col width="150"><col width="150"><col width="150"><col width="100">
+        <col width="300"><col width="150"><col width="150"><col width="100"><col width="100"><col width="100"><col width="100">
         <thead>
             <tr>
                 <th class="onthego-font"><a href="teacher.php" target="_parent">ON THE GO</a></th>
                 <th class="roboto-font"><a href="../Teacher/NewMasterCal.php" target="_parent">Master Calendar</a></th>
                 <th class="roboto-font"><a href="../Teacher/search.php" target="_parent" >Floor Search</a></th>
+                <th class="roboto-font"><a href="../book/search.php" target="_parent" >Booking</a></th>
                 <th class="roboto-font"><a href="../Teacher/Contact_Us.php" target="_parent">Contact Us</a></th>
                 <th class="roboto-font"><a href="../Teacher/FAQ.php" target="_parent">FAQ's</a></th>
                 <th align="right" id="profile-img-container">
@@ -120,7 +121,7 @@
                                     $row4 = mysqli_fetch_assoc($result4);
                                     $v=$i.$j;
                                     $x=$row4["venue"];
-                                    echo "<td width='250px'height='60.5px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Course"]." ".$row4["Specialization"]."<br>".$row4["Batch"]."</td>";
+                                    echo "<td width='250px' height='60.5px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Course"]." ".$row4["Specialization"]."<br>".$row4["Batch"]."</td>";
                                 }
                                 echo "</tr>";
                             }

@@ -7,7 +7,7 @@
             text-align: center;
         }
         h1 {
-        color:green;
+        color: #050A30;
         }
         body {
             text-align:center;
@@ -21,6 +21,15 @@
             text-decoration: none;
             color: #F1E3D2;
         }
+        .calendar-container {
+            width: 60%;
+            float: left;
+        }
+
+        .dates-table {
+            width: 40%;
+            float: right;
+        }   
         </style>
         <script>
             function mouseover() {
@@ -55,10 +64,10 @@
         </thead>
         </table>
         <h1 align="middle">MASTER CALENDAR</h1>
-        <table width="100%" border="0">
-            <tbody>
+        <table class='calendar-container' border="0">
+        <tbody>
                 <tr>
-                    <td>
+                    <td width='50%'>
                         <table width="100%" border="1">
                             <thead>
                                 <h2 align="center">December</h2>
@@ -121,7 +130,7 @@
                             </tbody>
                         </table>
                     </td>
-                    <td>
+                    <td width='50%'>
                         <table width="100%" border="1">
                             <thead>
                                 <h2 align="center">January</h2>
@@ -184,7 +193,9 @@
                             </tbody>
                         </table>
                     </td>
-                    <td>
+                </tr>
+                <tr>
+                    <td width='50%'>
                         <table width="100%" border="1">
                             <thead>
                                 <h2 align="center">February</h2>
@@ -247,9 +258,7 @@
                             </tbody>
                         </table>
                     </td>
-                </tr>
-                <tr>
-                    <td>
+                    <td width='50%'>
                         <table width="100%" border="1">
                             <thead>
                                 <h2 align="center">March</h2>
@@ -312,7 +321,9 @@
                             </tbody>
                         </table>
                     </td>
-                    <td>
+                </tr>
+                <tr>
+                    <td width='50%'>
                         <table width="100%" border="1">
                             <thead>
                                 <h2 align="center">April</h2>
@@ -378,7 +389,7 @@
                             </tbody>
                         </table>
                     </td>
-                    <td>
+                    <td width='50%'>
                         <table width="100%" border="1">
                             <thead>
                                 <h2 align="center">May</h2>
@@ -443,9 +454,28 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img src="Images/Screenshot 2023-12-26 155503.png"></img src></td>
+                    <td colspan="2" align="middle"><a href="DATES.html"><b>DATES</b></a></td>
+                    <td align="middle"><a href="../Admin/student.php" target="_parent"><img src="Images\pngtree-vector-house-icon-png-image_4163914.jpg" height="50" width="50"></img src></a></td>
                 </tr>
             </tbody>
+        </table>
+        <table class="dates-table" border='1'>
+            <br><br><br>
+            <thead>
+                <th align='center' colspan = '2'> Academic Calendar</th>
+            </thead>
+            <tr>
+                <td>11th December</td>
+                <td>Program Start Date</td>
+            </tr>
+            <tr>
+                <td>25th January</td>
+                <td>1st Attendace Report</td>
+            </tr>
+            <tr>
+                <td>22nd January - 29th January</td>
+                <td>Mid Term Test 1</td>
+            </tr>
         </table>
     </body>
     <script>
@@ -465,3 +495,6 @@
         });
     </script>
 </html>
+
+
+

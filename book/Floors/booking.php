@@ -17,35 +17,47 @@
             var batch = prompt("Enter the Batch:");
 
             if (time && day && subjectName && faculty && course && semester && specialization && division && batch && venue) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "check_availability.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                        if (xhr.responseText.trim() === "available") {
-                            var confirmBooking = confirm("Class is available. Do you want to book it?");
-                            if (confirmBooking) {
-                                bookClass(venueId, time, day, division, subjectName);
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "check_availability.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            if (xhr.responseText.trim() === "available") {
+                                var confirmBooking = confirm("Class is available. Do you want to book it?");
+                                if (confirmBooking) {
+                                    bookClass(venueId, time, day, division, subjectName,);
+                                }
+                            } else {
+                                alert(xhr.responseText);
                             }
                         } else {
-                            alert(xhr.responseText);
+                            // Handle HTTP error status
+                            alert("Error: " + xhr.status + " " + xhr.statusText);
                         }
-                    } else {
-                        // Handle HTTP error status
-                        alert("Error: " + xhr.status + " " + xhr.statusText);
                     }
-                }
-            };
-            // Encode parameters properly
-            var params = "venue_id=" + encodeURIComponent(venueId) + "&time=" + encodeURIComponent(time) + "&day=" + encodeURIComponent(day) + "&division=" + encodeURIComponent(division) + "&subjectName=" + encodeURIComponent(subjectName);
-            xhr.send(params);
-        } else {
-            alert("Please enter all details.");
+                };
+                // Encode parameters properly
+                var params = "venue_id=" + encodeURIComponent(venueId) + "&time=" + encodeURIComponent(time) + "&day=" + encodeURIComponent(day) + "&division=" + encodeURIComponent(division) + "&subjectName=" + encodeURIComponent(subjectName);
+                xhr.send(params);
+            } else {
+                alert("Please enter all details.");
+            }
         }
-    }
-        </script>
-        <script>
+        function assignClickEventToTDs() {
+            var tds = document.querySelectorAll('td');
+            tds.forEach(function(td) {
+                td.onclick = function() {
+                    checkAvailability(this.id);
+                };
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded'), function() {
+            assignClickEventToTDs();
+        }
+    </script>
+    <script>
         function bookClass(venueId, time, day, division, subjectName) {
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "book_class.php", true);

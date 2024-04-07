@@ -131,20 +131,28 @@
                                 $row4 = mysqli_fetch_assoc($result4);
                                 $v=$i.$j;
                                 $x=$row4["venue"];
-                                echo "<td width='250px' height='58.5px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>"."</td>";
+                                echo "<td width='250px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>"."</td>";
                             }
                             $tt=$tt+1;
                             echo "</tr>";
                         }
                         echo "</table>";
-                        $sql5="SELECT DISTINCT t.faculty, e.First Name,e.Last Name
-                        FROM timetable t,teacher e
-                        WHERE t.faculty=e.Initials AND `division`='$div' AND `semester`='$semester' AND (`Batch`='$batch' OR `Batch`='$div' OR `Subject`='BREAK') AND `course`='$course'";
-                        $result2=mysqli_query($conn,$sql5);
-                        while($row=$result2->fetch_assoc())
-                        {
-                            echo $row[faculty].$row[First Name].$row[LastName];
+
+
+                        $sql5 = "SELECT DISTINCT t.faculty AS initials, CONCAT(e.`First Name`, ' ', e.`Last Name`) AS faculty_name
+                                FROM time_table t
+                                INNER JOIN teacher e ON t.Faculty = e.Initials
+                                WHERE t.division = '$div' AND t.semester = '$semester' AND (t.Batch = '$batch' OR t.Batch = '$div' OR t.Subject = 'BREAK') AND t.course = '$course'";
+                        $result2 = mysqli_query($conn, $sql5);
+
+                        echo "<table border='1' width='100%'>";
+                        echo "<tr><td width='50%'><h2>Initials</h2></td><td width='50%'><h2>Faculty Name</h2></td></tr>";
+
+                        while ($row = $result2->fetch_assoc()) {
+                            echo "<tr><td>".$row['initials']."</td><td>".$row['faculty_name']."</td></tr>";
                         }
+
+                        echo "</table>";
                         mysqli_close($conn); 
                     }
                 ?>
