@@ -76,7 +76,7 @@
 
 <body>
 <table height="10%" width="100%" border="0" bgcolor="#050A30">
-<col width="300"><col width="150"><col width="150"><col width="150"><col width="100"><col width="100"><col width="100">
+        <col width="300"><col width="150"><col width="150"><col width="150"><col width="100"><col width="100"><col width="100">
         <thead>
             <tr>
                 <th class='onthego-font'><a href="../Admin/teacher.php" target="_parent">ON THE GO</a></th>

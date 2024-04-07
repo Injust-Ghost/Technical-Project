@@ -26,7 +26,7 @@
                             if (xhr.responseText.trim() === "available") {
                                 var confirmBooking = confirm("Class is available. Do you want to book it?");
                                 if (confirmBooking) {
-                                    bookClass(venueId, time, day, division, subjectName);
+                                    bookClass(venueId, time, day, division, subjectName,);
                                 }
                             } else {
                                 alert(xhr.responseText);
@@ -53,12 +53,11 @@
             });
         }
 
-        // Call the function once the DOM content is loaded
         document.addEventListener('DOMContentLoaded'), function() {
             assignClickEventToTDs();
         }
-        </script>
-        <script>
+    </script>
+    <script>
         function bookClass(venueId, time, day, division, subjectName) {
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "book_class.php", true);

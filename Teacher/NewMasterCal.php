@@ -7,7 +7,7 @@
             text-align: center;
         }
         h1 {
-        color:green;
+        color: #050A30;
         }
         body {
             text-align:center;
@@ -46,6 +46,15 @@
         #profile-img-container.clicked #details-box {
             opacity: 1;
         }
+        .calendar-container {
+            width: 60%;
+            float: left;
+        }
+
+        .dates-table {
+            width: 40%;
+            float: right;
+        } 
         </style>
         <script>
             function mouseover() {
@@ -60,12 +69,13 @@
 
     <body>
     <table height="10%" width="100%" border="0" bgcolor="#050A30">
-        <col width="300"><col width="150"><col width="150"><col width="150"><col width="150"><col width="100">
+        <col width="300"><col width="150"><col width="150"><col width="150"><col width="100"><col width="100"><col width="100">
         <thead>
             <tr>
                 <th class='onthego-font'><a href="../Admin/teacher.php" target="_parent">ON THE GO</a></th>
                 <th class='roboto-font'><a href="../Teacher/NewMasterCal.php" target="_parent">Master Calendar</a></th>
                 <th class='roboto-font'><a href="../Teacher/search.php" target="_parent" >Floor Search</a></th>
+                <th class='roboto-font'><a href="../book/search.php" target="_parent" >Booking</a></th>                
                 <th class='roboto-font'><a href="../Teacher/Contact_Us.php" target="_parent">Contact Us</a></th>
                 <th class='roboto-font'><a href="../Teacher/FAQ.php" target="_parent">FAQ's</a></th>
                 <th align="right" id="profile-img-container">
@@ -80,10 +90,10 @@
         </thead>
         </table>
         <h1 align="middle">MASTER CALENDAR</h1>
-        <table width="100%" border="0">
-            <tbody>
+        <table class='calendar-container' border="0">
+        <tbody>
                 <tr>
-                    <td>
+                    <td width='50%'>
                         <table width="100%" border="1">
                             <thead>
                                 <h2 align="center">December</h2>
@@ -146,7 +156,7 @@
                             </tbody>
                         </table>
                     </td>
-                    <td>
+                    <td width='50%'>
                         <table width="100%" border="1">
                             <thead>
                                 <h2 align="center">January</h2>
@@ -209,7 +219,9 @@
                             </tbody>
                         </table>
                     </td>
-                    <td>
+                </tr>
+                <tr>
+                    <td width='50%'>
                         <table width="100%" border="1">
                             <thead>
                                 <h2 align="center">February</h2>
@@ -272,9 +284,7 @@
                             </tbody>
                         </table>
                     </td>
-                </tr>
-                <tr>
-                    <td>
+                    <td width='50%'>
                         <table width="100%" border="1">
                             <thead>
                                 <h2 align="center">March</h2>
@@ -337,7 +347,9 @@
                             </tbody>
                         </table>
                     </td>
-                    <td>
+                </tr>
+                <tr>
+                    <td width='50%'>
                         <table width="100%" border="1">
                             <thead>
                                 <h2 align="center">April</h2>
@@ -403,7 +415,7 @@
                             </tbody>
                         </table>
                     </td>
-                    <td>
+                    <td width='50%'>
                         <table width="100%" border="1">
                             <thead>
                                 <h2 align="center">May</h2>
@@ -467,11 +479,25 @@
                         </table>
                     </td>
                 </tr>
-                <tr>
-                    <td colspan="2" align="middle"><a href="DATES.html"><b>DATES</b></a></td>
-                    <td align="middle"><a href="../Admin/student.php" target="_parent"><img src="Images\pngtree-vector-house-icon-png-image_4163914.jpg" height="50" width="50"></img src></a></td>
-                </tr>
-            </tbody>
+            </tbody>            
+        </table>
+        <table class="dates-table" border='1'>
+            <br><br><br>
+            <thead>
+                <th align='center' colspan = '2'> Academic Calendar</th>
+            </thead>
+            <tr>
+                <td>11th December</td>
+                <td>Program Start Date</td>
+            </tr>
+            <tr>
+                <td>25th January</td>
+                <td>1st Attendace Report</td>
+            </tr>
+            <tr>
+                <td>22nd January - 29th January</td>
+                <td>Mid Term Test 1</td>
+            </tr>
         </table>
     </body>
     <script>
