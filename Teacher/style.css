@@ -40,7 +40,7 @@ animation: blink 1s infinite alternate;
 #profile-img-container {
     position: relative;
     display: inline-block;
-    left: 80px;
+    left: 40px;
 }
 #profile-img:hover + #details-box,
 #profile-img-container.clicked #details-box {

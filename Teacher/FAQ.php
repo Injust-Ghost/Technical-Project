@@ -115,7 +115,7 @@
         <body>
 
             <div id="top-frame">
-                <center>  <h1>FAQ</h1></center>
+                <center>  <h1>FAQ's</h1></center>
             </div>
             <div id="main-frame">
                 <div id="main-content">
