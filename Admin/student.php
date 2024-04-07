@@ -146,14 +146,13 @@
                         $result2 = mysqli_query($conn, $sql5);
 
                         echo "<table border='1' width='100%'>";
-                        echo "<thead><tr><th width='50%'>Initials</th><th width='50%'>Faculty Name</th></tr></thead>";
-                        echo "<tbody>";
+                        echo "<tr><td width='50%'><h2>Initials</h2></td><td width='50%'><h2>Faculty Name</h2></td></tr>";
 
                         while ($row = $result2->fetch_assoc()) {
                             echo "<tr><td>".$row['initials']."</td><td>".$row['faculty_name']."</td></tr>";
                         }
 
-                        echo "</tbody></table>";
+                        echo "</table>";
                         mysqli_close($conn); 
                     }
                 ?>

@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centered Divs</title>
+<style>
+
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #050A30 ;
+  }
+
+  
+  .inner-div {
+    padding: 30px;
+    background-color: rgba(204, 204, 204, 0.375);
+    /* border-radius: 10px; */
+    /* width: 100px; */
+  }
+</style>
 </head>
 <body>
+ 
+  <div class="inner-div">
+    <img src="juan/download1-removebg-preview.png" style="padding: 39px;"><br>
     <center>
-        <table border="1px">
-            <tr>
-                <th><img src="Student\Images\january-calendar-2024.png" alt="">
-                <br>
-                <table>
-                    <tr>
-                        <button>njnjvnrv</button>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button>nvjrnvrvnr</button>
-                    </tr>
-                    
-                </table>
-            </th>
-                <th>signup</th>
-            </tr>
-        </table>
+        <button style="font-size: 20px; border-radius: 5px; background-color: white; color: #050A30;" >STUDENT LOGIN</button><br><br>
+    <button style="font-size: 20px;border-radius: 5px;background-color: white; color: #050A30;">TEACHER LOGIN</button>
     </center>
+  </div>
+ 
+  <div class="inner-div" >
+    <form action="S_login.php" target="_parent" id="student_login" style="width: 400px; font-size: 20px;" method="post">
+        <h2 style="color: white;">Student Login</h2>
+        <label for="loginUsername" style="font-size: 20px; color: white;">SAP ID:</label><br>
+        <input type="text" id="loginUsername" name="loginUsername" required style="font-size: 20px;"><br><br>
+        <label for="loginPassword" class="password-toggle" style="font-size: 20px; color: white;">Password:</label><br>
+        <input type="password" id="loginPassword" name="loginPassword" required style="font-size: 20px;"><br><br>
+        <!-- <button type="button" class ="password-toggle" onclick="togglePassword()" id="password-toggle">Show</button> -->
+        <button type="submit" style="font-size: 20px;">Login</button>
+        <div class="switch">
+            <center><p style="color: white;">Don't have an account? <a href="S_signup.html">Sign up</a></p></center>
+        </div>
+    </form>
+  </div>
 </body>
 </html>
