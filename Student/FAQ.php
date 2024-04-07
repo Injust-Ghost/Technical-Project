@@ -132,6 +132,11 @@
                     <div class="panel">
                         <p>Yes, technical support is available to assist users with any difficulties they may encounter while using the application, ensuring a smooth user experience.</p>
                     </div>
+
+                    <button class="accordion">Can users view timetable of other students ?</button>
+                    <div class="panel">
+                        <p>No ,users can only view their own timetable when they login with their own SAP ID and password</p>
+                    </div>
                 </div>
             </div>
     </body>

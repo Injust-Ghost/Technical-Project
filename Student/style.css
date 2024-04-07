@@ -1,6 +1,6 @@
 th:not(:first-child):hover {
     background-color: white;
-    color: #050A30;
+    color: #6a75c8;
 }
 a {
     text-decoration: none;

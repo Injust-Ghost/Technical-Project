@@ -115,12 +115,12 @@
                             for($i = 1; $i <= 10; $i++) {
                                 echo "<tr>";
                                 for($j = 11; $j <= 16; $j++) {
-                                    $sql4 = "SELECT subject, faculty, venue, batch FROM time_table WHERE Faculty='$Init' AND t_id='$i' AND d_id='$j'";
+                                    $sql4 = "SELECT subject, faculty, venue, Batch, Course, Specialization FROM time_table WHERE Faculty='$Init' AND t_id='$i' AND d_id='$j'";
                                     $result4 = mysqli_query($conn, $sql4);
                                     $row4 = mysqli_fetch_assoc($result4);
                                     $v=$i.$j;
                                     $x=$row4["venue"];
-                                    echo "<td width='250px'height='60.5px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Batch"]."</td>";
+                                    echo "<td width='250px'height='60.5px' align='center' id=$v value=$x  onclick='find(id)'>".$row4["subject"]."<br>".$row4["faculty"]."<br>".$row4["venue"]."<br>".$row4["Course"]." ".$row4["Specialization"]."<br>".$row4["Batch"]."</td>";
                                 }
                                 echo "</tr>";
                             }

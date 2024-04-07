@@ -130,7 +130,7 @@
 
                     <button class="accordion">Is the application available on mobile devices?</button>
                     <div class="panel">
-                        <p>Yes, the application is available on both Android and iOS platforms, allowing users to access it conveniently from their smartphones or tablets.</p>
+                        <p>No, currently the website is not available on  mobile devices.</p>
                     </div>
 
                     <button class="accordion">How accurate is the classroom mapping feature?</button>
@@ -156,6 +156,11 @@
                     <button class="accordion">Is technical support available for users encountering difficulties with the application?</button>
                     <div class="panel">
                         <p>Yes, technical support is available to assist users with any difficulties they may encounter while using the application, ensuring a smooth user experience.</p>
+                    </div>
+
+                    <button class="accordion">Can users view timetable of other students ?</button>
+                    <div class="panel">
+                        <p>No ,users can only view their own timetable when they login with their own SAP ID and password</p>
                     </div>
                 </div>
             </div>

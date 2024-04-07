@@ -71,7 +71,7 @@
             width: 104%;
             height: 48px;
             border-radius: 10px;
-            background: linear-gradient(-45deg, #ffe4c4 0%, #ffdab9 100%);
+            background: linear-gradient(-45deg, #6a75c8 0%, #6a75c8 100%);
             z-index: -10;
             pointer-events: none;
             transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -82,7 +82,7 @@
             z-index: -1;
             position: absolute;
             inset: 0;
-            background: linear-gradient(-45deg, #ffe4c4 0%, #ffdab9 100%);
+            background: linear-gradient(-45deg, #6a75c8 0%, #6a75c8 100%);
             transform: translate3d(0, 0, 0) scale(0.95);
             filter: blur(20px);
         }
