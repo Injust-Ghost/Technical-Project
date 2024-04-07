@@ -137,7 +137,14 @@
                             echo "</tr>";
                         }
                         echo "</table>";
-
+                        $sql5="SELECT DISTINCT t.faculty, e.First Name,e.Last Name
+                        FROM timetable t,teacher e
+                        WHERE t.faculty=e.Initials AND `division`='$div' AND `semester`='$semester' AND (`Batch`='$batch' OR `Batch`='$div' OR `Subject`='BREAK') AND `course`='$course'";
+                        $result2=mysqli_query($conn,$sql5);
+                        while($row=$result2->fetch_assoc())
+                        {
+                            echo $row[faculty].$row[First Name].$row[LastName];
+                        }
                         mysqli_close($conn); 
                     }
                 ?>
