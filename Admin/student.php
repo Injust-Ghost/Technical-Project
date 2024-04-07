@@ -36,7 +36,7 @@
         .onthego-font {
             font-family: 'Roboto', sans-serif;
             font-weight: bold;
-            font-size: 30px;
+            font-size: 18px;
         }
         #details-box {
             position: absolute;
