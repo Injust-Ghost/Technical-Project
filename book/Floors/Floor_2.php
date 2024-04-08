@@ -26,8 +26,8 @@
         </table>
         <script>
             function checkAvailability(venueId) {
-                var time = prompt("Enter the time  ID:");
-                var day = prompt("Enter the day ID:");
+                var time = prompt("Enter the time  ID:\n For 8-9 Enter 1 \nFor 9-10 Enter 2 and so on...");
+                var day = prompt("Enter the day ID: \n For Monday Enter 11 \nFor Tuesday Enter 12 and so on...");
                 var subjectName = prompt("Enter the subject name:");
                 var faculty = prompt("Enter the Faculty name:");
                 var course = prompt("Enter the Course:");

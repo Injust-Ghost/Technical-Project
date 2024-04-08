@@ -1,5 +1,6 @@
 <html>
     <head>
+        <title>On The Go</title>
         <style>
         th:not(:first-child):hover {
             background-color: #030721;
